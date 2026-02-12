@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructions for Authors - International Conference on AI and Security (AISIIS)</title>
+    <link rel="icon" type="image/x-icon" href="assests/tems-logo.png">
+    <!-- Load Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+     <script>
+        // Custom Tailwind Configuration for the conference theme
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // The strong primary blue matching the conference header
+                        'ieee-primary': '#0073B7', 
+                        'ieee-hover-blue': '#1E3A8A', // Darker shade for hover effect (Tailwind blue-900)
+                        
+                        // Colors referenced in your original code
+                        'ieee-red': '#DC2626',
+                        'ieee-blue-dark': '#005A9C', 
+                        'ieee-blue-medium': '#3B82F6', 
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Load Font Awesome for icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Custom styles to mimic the dark blue and light blue IEEE branding */
+        :root {
+            --ieee-blue-dark: #005A9C;
+            --ieee-blue-medium: #0073B7;
+            --ieee-blue-light: #0099D8;
+            --ieee-red: #CC0000;
+            --ieee-bg: #F8F8F8;
+            --ieee-grey-text: #333333;
+        }
+
+        /* Set the primary font to Inter for a modern look */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--ieee-bg);
+        }
+
+        /* Top meta bar style */
+        .meta-nav {
+            background-color: var(--ieee-blue-dark);
+            height: 30px;
+            background-color: rgba(0, 102, 153, .1);
+            box-shadow: inset 0 -1px 0 0 #069;
+        }
+
+        .meta-nav a {
+            color: var(--ieee-blue-dark);;
+            font-size: 0.75rem;
+            opacity: 0.9;
+            transition: opacity 0.2s;
+            text-decoration: none;
+        }
+
+        .meta-nav a:hover {
+            opacity: 1;
+        }
+
+        /* Main Header Background (mimicking the tiled pattern) */
+        #main-header {
+            background-color: var(--ieee-blue-medium);
+            background-image: url('https://placehold.co/100x100/0073B7/0073B7?text='); /* Placeholder for the blue pattern */
+            background-repeat: repeat-x;
+            background: linear-gradient(360deg, rgba(219, 240, 252, 1) 35%, rgba(247, 250, 254, 1) 100%);
+            color: #337ab7;
+        }
+
+        /* Main Navigation Bar */
+        #main-nav-bar {
+            background-color: var(--ieee-blue-light);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Active Navigation Dropdown Style */
+        .active-dropdown-link {
+            color: var(--ieee-red) !important;
+            background-color: var(--ieee-bg);
+            border-radius: 0.25rem;
+        }
+
+        /* Highlight box for key info - Professional blue left border */
+        .info-box {
+            border-left: 5px solid var(--ieee-blue-medium); /* Changed to medium blue for professionalism */
+            background-color: #F4F8FC; /* Very light blue background */
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: inset 0 0 5px rgba(0, 115, 183, 0.1);
+        }
+
+        /* Submission Button - Retaining Red for primary CTA */
+        .submit-btn {
+            background-color: var(--ieee-red);
+            color: white;
+            font-weight: 700;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .submit-btn:hover {
+            background-color: #A30000;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Download Button Styles */
+        .download-btn {
+            background-color: white;
+            border: 2px solid #0070b8;
+            color: var(--ieee-blue-dark);
+            transition: all 0.2s ease;
+            font-weight: 600;
+        }
+        .download-btn:hover {
+            background-color: var(--ieee-blue-medium);
+        }
+        
+        /* Mobile Menu Transitions */
+        #mobile-menu-drawer {
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(-100%);
+            z-index: 50;
+        }
+
+        #mobile-menu-drawer.open {
+            transform: translateX(0);
+        }
+        
+        /* Footer Styles */
+        #site-footer {
+            background-color: var(--ieee-blue-dark);
+            position: relative;
+            overflow: hidden; 
+        }
+
+        #site-footer::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://placehold.co/800x400/0073B7/005A9C?text=Technical+Circuit+Pattern');
+            background-size: cover;
+            background-position: right center;
+            opacity: 0.2;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header -->
+    <nav class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-sm shadow-md z-50">
+        <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+            <a href="#home" class="flex items-center space-x-2">
+                <img src="assets/logo.svg" alt="AIHC 2027" class="h-20 w-auto">
+                
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a class="text-gray-700 hover:text-blue-600 transition-colors font-medium" href="index.html#home">Home</a>
+                <a href="index.html#about" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">About</a>
+                <a href="index.html#committees" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Committees</a>
+                <a href="Place.html?scroll=places" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Places</a>
+                 <div class="relative group">
+                    <button class="text-gray-700 hover:text-blue-600 transition-colors font-medium flex items-center">
+                        For Authors
+                        <svg class="ml-1 h-4 w-4 transform transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="absolute left-0 top-full bg-white shadow-lg rounded-md py-2 w-48 z-10 border border-gray-100 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity">
+                        
+                        <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600" href="Call_for_paper.html">Call for Papers</a>
+                        <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600" href="Instruction_for_authors.html">Instruction for Authors</a>
+                    </div>
+                </div>
+                <a href="https://cmt3.research.microsoft.com/AIHC2027" class="bg-blue-600 text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-300">Submit Paper</a>
+            </div>
+            <button id="mobile-menu-button" class="text-gray-800 text-2xl md:hidden z-[110]" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+         <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-6 absolute top-full left-0 w-full shadow-lg">
+            <a href="index.html#home" class="block text-gray-700 hover:text-blue-600 py-2">Home</a>
+            <a href="index.html#about" class="block text-gray-700 hover:text-blue-600 py-2">About</a>
+            <a href="index.html#committees" class="block text-gray-700 hover:text-blue-600 py-2">Committees</a>
+            <a href="Place.html?scroll=places" class="block text-gray-700 hover:text-blue-600 py-2">Places</a>
+            <a href="Call_for_paper.html" class="block text-gray-700 hover:text-blue-600 py-2">Call for paper</a>
+            <a href="Instruction_for_authors.html" class="block text-gray-700 hover:text-blue-600 py-2">Instructions for Authors</a>
+             <a href="https://cmt3.research.microsoft.com/AIHC2027" class="mt-4 inline-block bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-all w-full text-center">Submit Paper</a>
+             
+        </div>
+    </nav>
+
+    
+
+    <!-- 4. Main Content Area -->
+    <main class="max-w-5xl mx-auto p-4 sm:p-6 lg:p-8">
+
+        <h1 class="text-4xl font-extrabold text-ieee-blue-dark text-center mb-10">Submission Guidelines for Authors</h1>
+        
+        <!-- Submission Guidelines Section -->
+        <section class="bg-white p-8 rounded-lg shadow-xl mb-10">
+            <h2 class="text-2xl font-bold text-ieee-dark mb-4 border-b border-gray-200 pb-2 flex items-center">
+                <i class="fas fa-file-upload mr-3 text-ieee-blue-dark"></i> General Submission Information
+            </h2>
+            <p class="mb-4 text-gray-700">
+                Prospective authors are invited to submit original technical papers for publication in the AIHC 2027. All papers should adhere to the following guidelines:
+            </p>
+            
+            <div class="info-box p-4 rounded-lg shadow-inner mb-6">
+                <p class="mb-2 text-lg font-semibold text-ieee-blue-medium">Key Requirements:</p>
+                <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+                    <li>All conference submissions should be written in <strong>English</strong>.</li>
+                    <li>Maximum paper length is <strong>six (6) printed pages</strong> (10-point font), including figures and tables.</li>
+                    <li>Review is <strong>single blind</strong>. Papers having poor quality and/or high similarity index will be <strong>desk rejected</strong> (without review).</li>
+                    <li>All the co-authors must be listed with affiliation details in the <strong>initial submission</strong>. No further authors can be added for selected papers.</li>
+                    <li>All the registered papers <strong>must be presented</strong> at the conference.</li>
+                    <!--<li>All presented papers will be submitted to IEEE for possible publication in <strong>IEEE Xplore</strong>.</li>-->
+                </ul>
+            </div>
+            
+            <h3 class="text-xl font-bold text-ieee-blue-medium mb-3">Template and Format</h3>
+            <ul class="list-disc list-inside space-y-3 text-gray-700 ml-4">
+                <li><strong>LaTeX</strong> is the preferred method to prepare your manuscript. Please use the standard LaTeX AIHC conference template.</li>
+                <li>For <strong>Microsoft Word</strong>, please use the most current version of the AIHC conference template, which will help reduce word-to-pdf conversion issues.</li>
+            </ul>
+
+            <h3 class="text-xl font-bold text-ieee-blue-medium mt-6 mb-3">Camera-Ready Instructions</h3>
+            <ul class="list-disc list-inside space-y-3 text-gray-700 ml-4">
+                <li>Authors who receive final acceptance after paper revision can only register for the conference. The authors will also be expected to submit a final version of the manuscript that will be added to AIHC proceedings as per the conference template.</li>
+                <li>Please upload camera-ready paper and an eCopy transfer file in **Microsoft CMT**.</li>
+                <li>Please make sure that the camera-ready paper has been generated by the template provided to you (Contains <strong>AIHC copyright notice</strong> on the first page bottom left, and the conference name as the footer on the rest of the pages) and <strong>verified with the PDF Express website</strong>.</li>
+                <!--<li>The completed <strong>IEEE electronic copyright form (ECF)</strong> needs to be transferred (as and when it is made available) as per IEEE requirements.</li>-->
+            </ul>
+
+            <div class="mt-8 text-center">
+                <h3 class="text-xl font-bold text-ieee-red mb-3">Submission Link</h3>
+                <a href="https://cmt3.research.microsoft.com/AIHC2027" target="_blank" class="submit-btn inline-flex items-center px-10 py-4 text-xl rounded-full shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105">
+                    <i class="fas fa-paper-plane mr-3"></i> Paper Submission Link
+                </a>
+            </div>
+        </section>
+
+
+        <!-- Download Templates Section -->
+        <section class="bg-white p-8 rounded-lg shadow-xl mb-10">
+            <h2 class="text-2xl font-bold text-ieee-dark mb-6 border-b border-gray-200 pb-2 flex items-center">
+                <i class="fas fa-download mr-3 text-ieee-blue-dark"></i> Download Formats and Templates
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <a href="https://www.ieee.org/content/dam/ieee-org/ieee/web/org/conferences/conference-template-letter.docx" class="download-btn text-center px-6 py-3 rounded-lg flex items-center justify-center space-x-2">
+                    <i class="fas fa-file-word"></i> <span>Word Template</span>
+                </a>
+                <a href="assests/conference-template-letter.pdf" class="download-btn text-center px-6 py-3 rounded-lg flex items-center justify-center space-x-2">
+                    <i class="fas fa-file-pdf"></i> <span>PDF Template</span>
+                </a>
+                <a href="https://www.ieee.org/content/dam/ieee-org/ieee/web/org/conferences/conference-latex-template.zip" class="download-btn text-center px-6 py-3 rounded-lg flex items-center justify-center space-x-2">
+                    <i class="fas fa-file-code"></i> <span>LaTeX Template</span>
+                </a>
+                <a href="#" class="download-btn text-center px-6 py-3 rounded-lg flex items-center justify-center space-x-2">
+                    <i class="fas fa-file-powerpoint"></i> <span>Paper Presentation (PDF)</span>
+                </a>
+                
+                <!-- Empty div for layout symmetry -->
+                <div></div>
+            </div>
+        </section>
+
+        <!-- Contact for Clarification -->
+        <div class="text-center text-lg mt-10 p-6 bg-ieee-blue-light/10 rounded-lg border border-ieee-blue-light shadow-md">
+            <p class="font-semibold text-ieee-blue-dark">For any clarifications regarding the paper submission guidelines, please email:</p>
+            <p class="mt-2 text-2xl font-extrabold text-ieee-red">AIHC2027.SIT@gmail.com</p>
+        </div>
+        
+    </main>
+
+    <!-- 5. Footer (Dark Blue with Pattern) -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto py-16 px-6 md:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            <!-- About -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">AIHC</h3>
+                <p class="text-gray-400 text-sm">International Conference on AI in Healthcare (AIHC 2027)</p>
+            </div>
+            <!-- Quick Links -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+                    <li><a href="#about" class="text-gray-400 hover:text-white transition">About</a></li>
+                    <li><a href="#committees" class="text-gray-400 hover:text-white transition">Committees</a></li>
+                    <li><a href="#speakers" class="text-gray-400 hover:text-white transition">Speakers</a></li>
+                    <li><a href="#registration" class="text-gray-400 hover:text-white transition">Registration</a></li>
+                    <li><a href="CMT_ACKNOWLEDGMENT.html" class="text-gray-400 hover:text-white transition">CMT_ACKNOWLEDGMENT</a></li>
+                </ul>
+            </div>
+            <!-- Venue -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">Conference Venue</h3>
+                <p class="text-gray-400 text-sm">
+                    Survey Number 292, Off Bangalore Highway,
+                    Modallaguda (V), Nandigama (M), <br>
+                    Rangareddy Distbr, Hyderabad,<br>
+                    Telangana, India, Pin Code : 509217
+                </p>
+                <a href="https://maps.app.goo.gl/SUthxxUUNDHbzbkRA" target="_blank" class="text-blue-400 hover:text-blue-300 mt-2 inline-block text-sm">View on Google Maps</a>
+            </div>
+            <!-- Contact -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">Contact Organizers</h3>
+                 <div class="space-y-2 text-sm">
+                    <p class="text-gray-400"><i class="fas fa-envelope mr-2"></i><a href="mailto:ramasubbareddy@sithyd.siu.edu.in" class="hover:text-white transition">ramasubbareddy@sithyd.siu.edu.in</a></p>
+                    <p class="text-gray-400"><i class="fas fa-phone mr-2"></i>Dr. Somula Ramasubbareddy: <a href="tel:+917013594626" class="hover:text-white transition">+91 7013594626</a></p>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- Sub-footer -->
+        <div class="bg-black bg-opacity-20 py-6 px-6 md:px-8">
+            <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-sm gap-4">
+                <p class="text-gray-500">© 2026 Conference Conference. All Rights Reserved.</p>
+                <div class="flex space-x-5">
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f fa-lg"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button (Hidden by default) -->
+    <button id="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="fixed bottom-4 right-4 bg-ieee-blue-light text-white p-3 rounded-full shadow-lg hover:bg-ieee-blue-dark transition duration-300 hidden">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* ==============================
+       MOBILE MENU
+    ============================== */
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileMenuButton && mobileMenu) {
+        const mobileMenuIcon = mobileMenuButton.querySelector('i');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenuIcon.classList.remove('fa-times');
+                mobileMenuIcon.classList.add('fa-bars');
+            } else {
+                mobileMenuIcon.classList.remove('fa-bars');
+                mobileMenuIcon.classList.add('fa-times');
+            }
+        });
+    }
+    });
+
+    </script>
+</body>
+</html>
