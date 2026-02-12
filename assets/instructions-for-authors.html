@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructions for Authors - International Conference on AI and Security (AISIIS)</title>
+    <link rel="icon" type="image/x-icon" href="assests/tems-logo.png">
+    <!-- Load Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+     <script>
+        // Custom Tailwind Configuration for the conference theme
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // The strong primary blue matching the conference header
+                        'ieee-primary': '#0073B7', 
+                        'ieee-hover-blue': '#1E3A8A', // Darker shade for hover effect (Tailwind blue-900)
+                        
+                        // Colors referenced in your original code
+                        'ieee-red': '#DC2626',
+                        'ieee-blue-dark': '#005A9C', 
+                        'ieee-blue-medium': '#3B82F6', 
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Load Font Awesome for icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Custom styles to mimic the dark blue and light blue IEEE branding */
+        :root {
+            --ieee-blue-dark: #005A9C;
+            --ieee-blue-medium: #0073B7;
+            --ieee-blue-light: #0099D8;
+            --ieee-red: #CC0000;
+            --ieee-bg: #F8F8F8;
+            --ieee-grey-text: #333333;
+        }
+
+        /* Set the primary font to Inter for a modern look */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--ieee-bg);
+        }
+
+        /* Top meta bar style */
+        .meta-nav {
+            background-color: var(--ieee-blue-dark);
+            height: 30px;
+            background-color: rgba(0, 102, 153, .1);
+            box-shadow: inset 0 -1px 0 0 #069;
+        }
+
+        .meta-nav a {
+            color: var(--ieee-blue-dark);;
+            font-size: 0.75rem;
+            opacity: 0.9;
+            transition: opacity 0.2s;
+            text-decoration: none;
+        }
+
+        .meta-nav a:hover {
+            opacity: 1;
+        }
+
+        /* Main Header Background (mimicking the tiled pattern) */
+        #main-header {
+            background-color: var(--ieee-blue-medium);
+            background-image: url('https://placehold.co/100x100/0073B7/0073B7?text='); /* Placeholder for the blue pattern */
+            background-repeat: repeat-x;
+            background: linear-gradient(360deg, rgba(219, 240, 252, 1) 35%, rgba(247, 250, 254, 1) 100%);
+            color: #337ab7;
+        }
+
+        /* Main Navigation Bar */
+        #main-nav-bar {
+            background-color: var(--ieee-blue-light);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Active Navigation Dropdown Style */
+        .active-dropdown-link {
+            color: var(--ieee-red) !important;
+            background-color: var(--ieee-bg);
+            border-radius: 0.25rem;
+        }
+
+        /* Highlight box for key info - Professional blue left border */
+        .info-box {
+            border-left: 5px solid var(--ieee-blue-medium); /* Changed to medium blue for professionalism */
+            background-color: #F4F8FC; /* Very light blue background */
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: inset 0 0 5px rgba(0, 115, 183, 0.1);
+        }
+
+        /* Submission Button - Retaining Red for primary CTA */
+        .submit-btn {
+            background-color: var(--ieee-red);
+            color: white;
+            font-weight: 700;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .submit-btn:hover {
+            background-color: #A30000;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Download Button Styles */
+        .download-btn {
+            background-color: white;
+            border: 2px solid #0070b8;
+            color: var(--ieee-blue-dark);
+            transition: all 0.2s ease;
+            font-weight: 600;
+        }
+        .download-btn:hover {
+            background-color: var(--ieee-blue-medium);
+        }
+        
+        /* Mobile Menu Transitions */
+        #mobile-menu-drawer {
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(-100%);
+            z-index: 50;
+        }
+
+        #mobile-menu-drawer.open {
+            transform: translateX(0);
+        }
+        
+        /* Footer Styles */
+        #site-footer {
+            background-color: var(--ieee-blue-dark);
+            position: relative;
+            overflow: hidden; 
+        }
+
+        #site-footer::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://placehold.co/800x400/0073B7/005A9C?text=Technical+Circuit+Pattern');
+            background-size: cover;
+            background-position: right center;
+            opacity: 0.2;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body class="bg-ieee-bg text-ieee-grey-text">
+
+    <!-- 1. Top Meta Navigation Bar (Dark Blue) -->
+     <!-- 1. Top Meta Navigation Bar (Dark Blue) -->
+     <!-- 1. Top Meta Navigation Bar (Dark Blue) -->
+    <!-- <nav class="meta-nav hidden md:block">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <ul class="flex justify-end space-x-4 py-1">
+                <li><a href="https://www.ieee.org/" target="_blank"><strong>IEEE.org</strong></a></li>
+                <li><a href="https://ieeexplore.ieee.org/Xplore/home.jsp" target="_blank"><strong>IEEE Xplore</strong></a></li>
+                <li><a href="https://standards.ieee.org/?_gl=1*11sucg7*_gcl_au*NDM5MDk1NjMxLjE3NjQ1ODc5OTk." target="_blank"><strong>IEEE Standards</strong></a></li>
+                <li class="hidden lg:block"><a href="http://spectrum.ieee.org/" target="_blank"><strong>IEEE Spectrum</strong></a></li>
+                <li><a href="https://www.ieee.org/sitemap.html" target="_blank"><strong>More Sites</strong></a></li>
+            </ul>
+        </div>
+    </nav>-->
+
+    <!-- 2. Main Header (Medium Blue with Logo/Title/Search) -->
+    <header id="main-header" class="shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+            <!-- Logo/Title Block -->
+            <div class="flex-grow md:flex-grow-0">
+                <a href="index.html" class="flex flex-col items-start text-ieee-blue leading-none">
+                    <h1 class="text-xl md:text-2xl font-bold uppercase tracking-tight">TEMSMET 2026 </h1>
+                    <span class="text-xs md:text-sm font-light">October 29-31, 2026</span>
+                    <span class="text-xs md:text-sm font-light">Symbiosis Institute of Technology (SIT), Hyderabad</span>
+                    <span class="text-xs md:text-sm font-light">International Conference on Technology, Engineering, Management for Societal Impact</span>
+                </a>
+            </div>
+
+            <!-- Search and IEEE Logo (Right Side - Desktop) -->
+            <div class="hidden md:flex items-center space-x-4">
+                <form onsubmit="event.preventDefault(); console.log('Searching...');" class="flex items-center">
+                    <input type="search" placeholder="Search Conference" class="p-2 text-sm text-ieee-grey-text rounded-l-lg focus:ring-2 focus:ring-ieee-blue-light border border-gray-300">
+                    <button type="submit" class="bg-white p-2 text-ieee-blue-dark rounded-r-lg border border-gray-300 border-l-0">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </form>
+                <a href="https://www.ieee.org/" target="_blank" class="w-20">
+                    <img src="assests/footerimg.png" alt="Symbiosis Logo" class="w-full h-auto object-contain">
+                </a>
+                <a href="https://www.ieee.org/" target="_blank" class="w-20">
+                    <img src="assests/download (1).png" alt="Symbiosis Logo" class="w-full h-auto object-contain">
+                </a>
+
+                <a href="https://www.ieee.org/" target="_blank" class="w-20">
+                    <img src="assests/tems-logo.png" alt="Tems Logo" class="w-full h-auto object-contain">
+                </a>
+            </div>
+            <button id="menu-toggle" class="md:hidden text-ieee-blue text-xl p-2 rounded-lg hover:bg-ieee-blue-dark transition duration-150">
+                <i class="fas fa-bars"></i>
+                <span class="ml-2 text-sm font-semibold">MENU</span>
+            </button>     
+        </div>
+    </header>
+
+    <!-- 3. Main Navigation Bar (Light Blue) -->
+    <nav id="main-nav-bar" class="hidden md:block">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <ul class="flex justify-center space-x-6 lg:space-x-10">
+                <li><a href="index.html" class="block py-3 text-white font-semibold hover:text-gray-200 transition duration-150 ">HOME</a></li>
+                <li><a href="committee.html" class="block py-3 text-white font-semibold hover:text-gray-200 transition duration-150 active-nav">COMMITTEE</a></li>
+                <li class="group relative">
+                    <a href="#" class="block py-3 text-white font-semibold hover:text-gray-200 transition duration-150">FOR AUTHORS <i class="fas fa-caret-down text-xs"></i></a>
+                    <ul class="absolute hidden group-hover:block bg-white shadow-xl rounded-b-lg min-w-[200px] z-20">
+                        
+                        <li><a href="instructions-for-authors.html" class="block px-4 py-2 text-ieee-grey-text hover:bg-gray-100 active-dropdown-link">Instructions for Authors</a></li>
+                        <li><a href="instructions-of-review-manuscripts.html" class="block px-4 py-2 text-ieee-grey-text hover:bg-gray-100">Review Manuscripts</a></li>
+                         <!-- Active link within the dropdown -->
+                        <li><a href="instructions-for-camera-ready-papers.html" class="block px-4 py-2 text-ieee-grey-text hover:bg-gray-100 ">Camera Ready</a></li>
+                    </ul>
+                </li>
+                <li><a href="call-for-papers.html" class="block py-3 text-white font-semibold hover:text-gray-200 transition duration-150">CALL FOR PAPER</a></li>
+                <li><a href="important-dates.html" class="block py-3 text-white font-semibold hover:text-gray-200 transition duration-150">IMPORTANT DATES</a></li>
+                <li><a href="registration.html" class="block py-3 text-white font-semibold hover:text-gray-200 transition duration-150">REGISTRATION</a></li>
+                <li><a href="#" class="block py-3 text-white font-semibold hover:text-gray-200 transition duration-150">SPONSORSHIPS</a></li>
+                <li><a href="contact-us.html" class="block py-3 text-white font-semibold hover:text-gray-200 transition duration-150">CONTACT US</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu-drawer" class="fixed top-0 left-0 h-full w-64 bg-ieee-blue-dark text-white shadow-xl p-4 md:hidden">
+        <div class="flex justify-between items-center border-b border-white/20 pb-4 mb-4">
+            <span class="text-lg font-bold">MENU</span>
+            <button id="close-menu" class="text-2xl hover:text-ieee-blue-light"><i class="fas fa-times"></i></button>
+        </div>
+        <ul class="space-y-2">
+            <li><a href="index.html" class="block py-2 px-3 rounded hover:bg-ieee-blue-medium">HOME</a></li>
+            <li><a href="committee.html" class="block py-2 px-3 rounded hover:bg-ieee-blue-medium">COMMITTEE</a></li>
+            <!-- Dropdown placeholder for Authors -->
+            <li class="relative">
+                <button id="mobile-author-toggle" class="flex justify-between items-center w-full py-2 px-3 rounded hover:bg-ieee-blue-medium text-left">
+                    FOR AUTHORS <i class="fas fa-caret-down text-xs ml-2"></i>
+                </button>
+                <ul id="mobile-author-menu" class="ml-4 mt-1 space-y-1 bg-ieee-blue-medium rounded-lg">
+                    
+                    <li><a href="call-for-papers.html" class="block py-1 px-3 rounded hover:bg-ieee-blue-light text-sm ">Call for Papers</a></li>
+                    <li><a href="important-dates.html" class="block py-1 px-3 rounded hover:bg-ieee-blue-light text-sm ">Important Dates</a></li>
+                    <li><a href="instructions-for-authors.html" class="block py-1 px-3 rounded hover:bg-ieee-blue-light text-sm active-dropdown-link">Instructions for Authors</a></li>
+                    <li><a href="instructions-of-review-manuscripts.html" class="block py-1 px-3 rounded hover:bg-ieee-blue-light text-sm ">Review Manuscripts</a></li>
+                    <li><a href="instructions-for-camera-ready-papers.html" class="block py-1 px-3 rounded hover:bg-ieee-blue-light text-sm ">Camera Ready</a></li>
+                </ul>
+            </li>
+            <li><a href="registration.html" class="block py-2 px-3 rounded hover:bg-ieee-blue-medium">REGISTRATION</a></li>
+            <li><a href="#" class="block py-2 px-3 rounded hover:bg-ieee-blue-medium">SPONSORSHIPS</a></li>
+            <li><a href="contact-us.html" class="block py-2 px-3 rounded hover:bg-ieee-blue-medium">CONTACT US</a></li>
+        </ul>
+            
+        <!-- Mobile Social Links -->
+        <div class="mt-8 pt-4 border-t border-white/20">
+            <div class="flex justify-around text-xl">
+                <a href="#" target="_blank" class="hover:text-ieee-blue-light"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" class="hover:text-ieee-blue-light"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank" class="hover:text-ieee-blue-light"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank" class="hover:text-ieee-blue-light"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" target="_blank" class="hover:text-ieee-blue-light"><i class="fab fa-youtube"></i></a>
+                <a href="#" target="_blank" class="hover:text-ieee-blue-light"><i class="fas fa-share-alt"></i></a>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-menu-backdrop" class="fixed inset-0 bg-black/50 hidden z-40 md:hidden"></div>
+
+    <!-- 4. Main Content Area -->
+    <main class="max-w-5xl mx-auto p-4 sm:p-6 lg:p-8">
+
+        <h1 class="text-4xl font-extrabold text-ieee-blue-dark text-center mb-10">Submission Guidelines for Authors</h1>
+        
+        <!-- Submission Guidelines Section -->
+        <section class="bg-white p-8 rounded-lg shadow-xl mb-10">
+            <h2 class="text-2xl font-bold text-ieee-dark mb-4 border-b border-gray-200 pb-2 flex items-center">
+                <i class="fas fa-file-upload mr-3 text-ieee-blue-dark"></i> General Submission Information
+            </h2>
+            <p class="mb-4 text-gray-700">
+                Prospective authors are invited to submit original technical papers for publication in the TEMSMET 2025. All papers should adhere to the following guidelines:
+            </p>
+            
+            <div class="info-box p-4 rounded-lg shadow-inner mb-6">
+                <p class="mb-2 text-lg font-semibold text-ieee-blue-medium">Key Requirements:</p>
+                <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+                    <li>All conference submissions should be written in <strong>English</strong>.</li>
+                    <li>Maximum paper length is <strong>six (6) printed pages</strong> (10-point font), including figures and tables.</li>
+                    <li>Review is <strong>single blind</strong>. Papers having poor quality and/or high similarity index will be <strong>desk rejected</strong> (without review).</li>
+                    <li>All the co-authors must be listed with affiliation details in the <strong>initial submission</strong>. No further authors can be added for selected papers.</li>
+                    <li>All the registered papers <strong>must be presented</strong> at the conference.</li>
+                    <!--<li>All presented papers will be submitted to IEEE for possible publication in <strong>IEEE Xplore</strong>.</li>-->
+                </ul>
+            </div>
+            
+            <h3 class="text-xl font-bold text-ieee-blue-medium mb-3">Template and Format</h3>
+            <ul class="list-disc list-inside space-y-3 text-gray-700 ml-4">
+                <li><strong>LaTeX</strong> is the preferred method to prepare your manuscript. Please use the standard LaTeX TEMSMET conference template.</li>
+                <li>For <strong>Microsoft Word</strong>, please use the most current version of the TEMSMET conference template, which will help reduce word-to-pdf conversion issues.</li>
+            </ul>
+
+            <h3 class="text-xl font-bold text-ieee-blue-medium mt-6 mb-3">Camera-Ready Instructions</h3>
+            <ul class="list-disc list-inside space-y-3 text-gray-700 ml-4">
+                <li>Authors who receive final acceptance after paper revision can only register for the conference. The authors will also be expected to submit a final version of the manuscript that will be added to TEMSMET proceedings as per the conference template.</li>
+                <li>Please upload camera-ready paper and an eCopy transfer file in **Microsoft CMT**.</li>
+                <li>Please make sure that the camera-ready paper has been generated by the template provided to you (Contains <strong>TEMSMET copyright notice</strong> on the first page bottom left, and the conference name as the footer on the rest of the pages) and <strong>verified with the PDF Express website</strong>.</li>
+                <!--<li>The completed <strong>IEEE electronic copyright form (ECF)</strong> needs to be transferred (as and when it is made available) as per IEEE requirements.</li>-->
+            </ul>
+
+            <div class="mt-8 text-center">
+                <h3 class="text-xl font-bold text-ieee-red mb-3">Submission Link</h3>
+                <a href="https://cmt3.research.microsoft.com/TEMSMET2026" target="_blank" class="submit-btn inline-flex items-center px-10 py-4 text-xl rounded-full shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105">
+                    <i class="fas fa-paper-plane mr-3"></i> Paper Submission Link
+                </a>
+            </div>
+        </section>
+
+
+        <!-- Download Templates Section -->
+        <section class="bg-white p-8 rounded-lg shadow-xl mb-10">
+            <h2 class="text-2xl font-bold text-ieee-dark mb-6 border-b border-gray-200 pb-2 flex items-center">
+                <i class="fas fa-download mr-3 text-ieee-blue-dark"></i> Download Formats and Templates
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <a href="https://www.ieee.org/content/dam/ieee-org/ieee/web/org/conferences/conference-template-letter.docx" class="download-btn text-center px-6 py-3 rounded-lg flex items-center justify-center space-x-2">
+                    <i class="fas fa-file-word"></i> <span>Word Template</span>
+                </a>
+                <a href="assests/conference-template-letter.pdf" class="download-btn text-center px-6 py-3 rounded-lg flex items-center justify-center space-x-2">
+                    <i class="fas fa-file-pdf"></i> <span>PDF Template</span>
+                </a>
+                <a href="https://www.ieee.org/content/dam/ieee-org/ieee/web/org/conferences/conference-latex-template.zip" class="download-btn text-center px-6 py-3 rounded-lg flex items-center justify-center space-x-2">
+                    <i class="fas fa-file-code"></i> <span>LaTeX Template</span>
+                </a>
+                <a href="#" class="download-btn text-center px-6 py-3 rounded-lg flex items-center justify-center space-x-2">
+                    <i class="fas fa-file-powerpoint"></i> <span>Paper Presentation (PDF)</span>
+                </a>
+                <a href="#" class="download-btn text-center px-6 py-3 rounded-lg flex items-center justify-center space-x-2">
+                    <i class="fas fa-table"></i> <span>Poster Presentation (PPT)</span>
+                </a>
+                <!-- Empty div for layout symmetry -->
+                <div></div>
+            </div>
+        </section>
+
+        <!-- Contact for Clarification -->
+        <div class="text-center text-lg mt-10 p-6 bg-ieee-blue-light/10 rounded-lg border border-ieee-blue-light shadow-md">
+            <p class="font-semibold text-ieee-blue-dark">For any clarifications regarding the paper submission guidelines, please email:</p>
+            <p class="mt-2 text-2xl font-extrabold text-ieee-red">temsmet2026@gmail.com</p>
+        </div>
+        
+    </main>
+
+    <!-- 5. Footer (Dark Blue with Pattern) -->
+    <footer id="site-footer" class="bg-ieee-blue-dark text-white pt-8 pb-10 mt-10 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- 1. Footer Links (Centered and Above) -->
+            <ul class="flex flex-wrap justify-center space-x-4 text-sm font-semibold border-b border-white/30 pb-4 mb-6">
+                <li><a href="index.html" class="hover:text-ieee-blue-light transition duration-150 p-2">HOME</a></li>
+                <li><a href="#" target="_blank" class="hover:text-ieee-blue-light transition duration-150 p-2">SITEMAP</a></li>
+                <li><a href="#" target="_blank" class="hover:text-ieee-blue-light transition duration-150 p-2">ACCESSIBILITY</a></li>
+                <li><a href="#" target="_blank" class="hover:text-ieee-blue-light transition duration-150 p-2">NONDISCRIMINATION POLICY</a></li>
+                <li><a href="#" target="_blank" class="hover:text-ieee-blue-light transition duration-150 p-2">ETHICS REPORTING</a></li>
+                <li><a href="#" target="_blank" class="hover:text-ieee-blue-light transition duration-150 p-2">PRIVACY POLICY</a></li>
+                <li><a href="#" target="_blank" class="hover:text-ieee-blue-light transition duration-150 p-2">TERMS</a></li>
+            </ul>
+
+            <!-- 2. Copyright & Social Section (Split layout) -->
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                <!-- Copyright & Disclaimer (Left) -->
+                <!--<div class="text-xs font-light max-w-xl space-y-1 mb-4 md:mb-0 md:pr-8">
+                    <p>&copy; Copyright 2025 IEEE – All rights reserved. Use of this website signifies your agreement to the IEEE Terms and Conditions.</p>
+                    <p class="mt-1">A public charity, IEEE is the world’s largest technical professional organization dedicated to advancing technology for the benefit of humanity.</p>
+                    <p class="mt-1 font-semibold text-ieee-blue-light">Contact: <a href="mailto:aisiis2026@gmail.com" class="hover:underline">aisiis2026@gmail.com</a></p>
+                </div>-->
+
+                <!-- Social Links (Right) -->
+                <div class="flex space-x-4 text-xl self-end md:self-auto mb-4 md:mb-0">
+                    <a href="#" target="_blank" class="hover:text-ieee-blue-light transition duration-150"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" class="hover:text-ieee-blue-light transition duration-150"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank" class="hover:text-ieee-blue-light transition duration-150"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank" class="hover:text-ieee-blue-light transition duration-150"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" target="_blank" class="hover:text-ieee-blue-light transition duration-150"><i class="fab fa-youtube"></i></a>
+                    <a href="#" target="_blank" class="hover:text-ieee-blue-light transition duration-150"><i class="fas fa-share-alt"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- Note: The "Back to Top" button is kept outside the footer to remain fixed -->
+    </footer>
+
+    <!-- Back to Top Button (Hidden by default) -->
+    <button id="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="fixed bottom-4 right-4 bg-ieee-blue-light text-white p-3 rounded-full shadow-lg hover:bg-ieee-blue-dark transition duration-300 hidden">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menu-toggle');
+            const closeMenu = document.getElementById('close-menu');
+            const mobileMenuDrawer = document.getElementById('mobile-menu-drawer');
+            const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
+            const mobileSearchToggle = document.getElementById('search-toggle-mobile');
+            const mobileSearchBar = document.getElementById('mobile-search-bar');
+            const backToTop = document.getElementById('back-to-top');
+            const mobileAuthorToggle = document.getElementById('mobile-author-toggle');
+            const mobileAuthorMenu = document.getElementById('mobile-author-menu');
+            
+            // --- Mobile Menu Logic ---
+            const toggleMenu = () => {
+                mobileMenuDrawer.classList.toggle('open');
+                mobileMenuBackdrop.classList.toggle('hidden');
+            };
+
+            menuToggle.addEventListener('click', toggleMenu);
+            closeMenu.addEventListener('click', toggleMenu);
+            mobileMenuBackdrop.addEventListener('click', toggleMenu);
+
+            // --- Mobile Search Logic ---
+            mobileSearchToggle.addEventListener('click', () => {
+                mobileSearchBar.classList.toggle('hidden');
+            });
+
+            // --- Mobile Author Dropdown Logic ---
+            const authorToggleState = localStorage.getItem('mobileAuthorMenuOpen') === 'true';
+            if (authorToggleState) {
+                mobileAuthorMenu.classList.remove('hidden');
+            }
+
+            mobileAuthorToggle.addEventListener('click', () => {
+                const isHidden = mobileAuthorMenu.classList.toggle('hidden');
+                localStorage.setItem('mobileAuthorMenuOpen', !isHidden);
+            });
+
+
+            // --- Back to Top Logic ---
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTop.classList.remove('hidden');
+                } else {
+                    backToTop.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
