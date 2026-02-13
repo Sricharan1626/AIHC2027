@@ -1,0 +1,14 @@
+---
+deployment:
+  tasks:
+    # Set the folder where your website will be deployed
+    - export DEPLOYPATH=/home2/icaisith/public_html
+
+    # Create the deployment folder if it doesn't exist
+    - mkdir -p $DEPLOYPATH
+
+    # Copy all files except the .git folder to the deployment folder
+    - /bin/cp -R $(ls -A | grep -v ".git") $DEPLOYPATH
+
+    # Optional: set permissions (readable by web server)
+    - chmod -R 755 $DEPLOYPATH
