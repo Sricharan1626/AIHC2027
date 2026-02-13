@@ -117,47 +117,76 @@
 <body class="bg-gray-50">
 
     <!-- Header -->
-    <nav class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-sm shadow-md z-50">
-        <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
-            <a href="#home" class="flex items-center space-x-2">
-                <img src="assets/logo.svg" alt="AIHC 2027" class="h-20 w-auto">
-                
-            </a>
-            <div class="hidden md:flex items-center space-x-8">
-                <a class="text-gray-700 hover:text-blue-600 transition-colors font-medium" href="#home">Home</a>
-                <a href="#about" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">About</a>
-                <a href="#committees" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Committees</a>
-                <a href="Place.html?scroll=places" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Places</a>
-                 <div class="relative group">
-                    <button class="text-gray-700 hover:text-blue-600 transition-colors font-medium flex items-center">
-                        For Authors
-                        <svg class="ml-1 h-4 w-4 transform transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <div class="absolute left-0 top-full bg-white shadow-lg rounded-md py-2 w-48 z-10 border border-gray-100 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity">
-                        
-                        <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600" href="Call_for_paper.html">Call for Papers</a>
-                        <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600" href="Instruction_for_authors.html">Instruction for Authors</a>
-                        <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600" href="Submission_Guidelines.html">Submission Guidelines</a>
-                    </div>
+    <nav class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md shadow-md z-50 border-b border-gray-200">
+    <div class="flex justify-between items-center h-20 px-6 py-4 max-w-7xl mx-auto">
+        
+        <!-- Logo Section -->
+        <a href="index.html" class="flex items-center space-x-4">
+            <img src="assets/ieee.png" alt="IEEE Logo" class="h-10 w-auto">
+            <img src="assets/logo.svg" alt="AIHC 2027" class="h-14 w-auto">
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-8">
+            <a class="text-gray-700 hover:text-blue-600 transition-colors font-medium" href="#home">Home</a>
+            <a href="#about" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">About</a>
+            <a href="#committees" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Committees</a>
+            <a href="Place.html?scroll=places" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Places</a>
+
+            <!-- Dropdown -->
+            <div class="relative group">
+                <button class="text-gray-700 hover:text-blue-600 transition-colors font-medium flex items-center">
+                    For Authors
+                    <svg class="ml-1 h-4 w-4 transform transition-transform duration-200 group-hover:rotate-180"
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+
+                <div class="absolute left-0 top-full mt-2 bg-white shadow-lg rounded-md py-2 w-52 border border-gray-100 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity">
+                    <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+                        href="Call_for_paper.html">Call for Papers</a>
+                    <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+                        href="Instruction_for_authors.html">Instructions for Authors</a>
+                    <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+                        href="Submission_Guidelines.html">Submission Guidelines</a>
                 </div>
-                <a href="https://cmt3.research.microsoft.com/AIHC2027" class="bg-blue-600 text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-300">Submit Paper</a>
             </div>
-            <button id="mobile-menu-button" class="text-gray-800 text-2xl md:hidden z-[110]" aria-label="Toggle menu">
-                <i class="fas fa-bars"></i>
-            </button>
+
+            <a href="https://cmt3.research.microsoft.com/AIHC2027"
+                class="bg-blue-600 text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-md">
+                Submit Paper
+            </a>
         </div>
-         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-6 absolute top-full left-0 w-full shadow-lg">
-            <a href="#home" class="block text-gray-700 hover:text-blue-600 py-2">Home</a>
-            <a href="#about" class="block text-gray-700 hover:text-blue-600 py-2">About</a>
-            <a href="#committees" class="block text-gray-700 hover:text-blue-600 py-2">Committees</a>
-            <a href="Place.html?scroll=places" class="block text-gray-700 hover:text-blue-600 py-2">Places</a>
-            <a href="Call_for_paper.html" class="block text-gray-700 hover:text-blue-600 py-2">Call for paper</a>
-            <a href="Instruction_for_authors.html" class="block text-gray-700 hover:text-blue-600 py-2">Instructions for Authors</a>
-            <a href="Instruction_for_authors.html" class="block text-gray-700 hover:text-blue-600 py-2">Instructions for Authors</a>
-             <a href="https://cmt3.research.microsoft.com/AIHC2027" class="mt-4 inline-block bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-all w-full text-center">Submit Paper</a>
-        </div>
-    </nav>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-button"
+            class="text-gray-800 text-2xl md:hidden"
+            aria-label="Toggle menu">
+            <i class="fas fa-bars"></i>
+        </button>
+
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+        class="hidden md:hidden bg-white border-t border-gray-200 py-4 px-6 shadow-lg">
+        <a href="#home" class="block py-2 text-gray-700 hover:text-blue-600">Home</a>
+        <a href="#about" class="block py-2 text-gray-700 hover:text-blue-600">About</a>
+        <a href="#committees" class="block py-2 text-gray-700 hover:text-blue-600">Committees</a>
+        <a href="Place.html?scroll=places" class="block py-2 text-gray-700 hover:text-blue-600">Places</a>
+        <a href="Call_for_paper.html" class="block py-2 text-gray-700 hover:text-blue-600">Call for Papers</a>
+        <a href="Instruction_for_authors.html" class="block py-2 text-gray-700 hover:text-blue-600">Instructions for Authors</a>
+        <a href="Submission_Guidelines.html" class="block py-2 text-gray-700 hover:text-blue-600">Submission Guidelines</a>
+
+        <a href="https://cmt3.research.microsoft.com/AIHC2027"
+            class="mt-4 block bg-blue-600 text-white px-6 py-2 rounded-lg text-center font-semibold hover:bg-blue-700 transition-all">
+            Submit Paper
+        </a>
+    </div>
+</nav>
+
  
     <!-- Hero Section -->
     <section id="home" class="pt-24 md:pt-32 bg-white" style="scroll-margin-top:6rem;">
@@ -172,6 +201,9 @@
 
         <p class="text-gray-600 text-lg md:text-xl mt-2 w-full max-w-3xl animate-fade-in">
             Date: 23–24 January 2027 | Symbiosis Institute of Technology Hyderabad
+        </p>
+        <p class="text-blue-600 text-lg md:text-xl mt-2 w-full max-w-3xl animate-fade-in">
+            Technically Co-Sponsored by IEEE Hyderabad Section <br>IEEE Conference Record #71011
         </p>
 
         <!-- HERO IMAGE -->
@@ -237,6 +269,98 @@
 
     </div>
 </section>
+
+<section class="py-8">
+  <div id="countdown-section"
+       class="relative max-w-6xl mx-auto rounded-2xl overflow-hidden shadow-lg
+              bg-cover bg-center"
+       style="background-image: url('assets/banner.jfif');">
+
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-r 
+                from-blue-900/95 via-blue-800/85 to-blue-900/95"></div>
+
+    <div class="relative z-10 px-8 md:px-12 py-10">
+
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-10">
+
+        <!-- LEFT SIDE -->
+        <div class="space-y-6 max-w-lg">
+          <h2 class="text-4xl font-bold text-white">
+            AIHC 2027
+          </h2>
+
+          <div class="space-y-4 text-white">
+
+            <div>
+              <p class="text-xs uppercase text-blue-300 tracking-wider font-semibold">
+                Event Dates
+              </p>
+              <p class="text-lg font-medium">
+                January 23–24, 2027
+              </p>
+            </div>
+
+            <div>
+              <p class="text-xs uppercase text-blue-300 tracking-wider font-semibold">
+                Location
+              </p>
+              <p class="text-lg font-medium">
+                Symbiosis Institute of Technology
+              </p>
+              <p class="text-sm text-blue-100">
+                Hyderabad, Telangana, India
+              </p>
+            </div>
+
+          </div>
+
+          <a href="registration.html"
+             class="inline-block bg-white text-blue-900 font-semibold
+                    px-10 py-2.5 rounded-full shadow-md
+                    hover:bg-gray-100 transition">
+            Register Now
+          </a>
+        </div>
+
+        <!-- TIMER -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-5">
+
+          <div class="bg-white/10 backdrop-blur-lg rounded-xl px-6 py-4 text-center">
+            <span id="days" class="block text-4xl font-bold text-white">00</span>
+            <span class="text-xs uppercase text-blue-200 mt-1 block">Days</span>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-lg rounded-xl px-6 py-4 text-center">
+            <span id="hours" class="block text-4xl font-bold text-white">00</span>
+            <span class="text-xs uppercase text-blue-200 mt-1 block">Hours</span>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-lg rounded-xl px-6 py-4 text-center">
+            <span id="minutes" class="block text-4xl font-bold text-white">00</span>
+            <span class="text-xs uppercase text-blue-200 mt-1 block">Minutes</span>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-lg rounded-xl px-6 py-4 text-center">
+            <span id="seconds" class="block text-4xl font-bold text-white">00</span>
+            <span class="text-xs uppercase text-blue-200 mt-1 block">Seconds</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
 
     <!-- About Section -->
     <section id="about" class="bg-white py-20 px-6 md:px-16">
@@ -937,16 +1061,60 @@ Full Paper Submission</p>
             </div>
         </div>
         <!-- Sub-footer -->
-        <div class="bg-black bg-opacity-20 py-6 px-6 md:px-8">
-            <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-sm gap-4">
-                <p class="text-gray-500">© 2026 Conference Conference. All Rights Reserved.</p>
-                <div class="flex space-x-5">
-                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter fa-lg"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f fa-lg"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin-in fa-lg"></i></a>
-                </div>
-            </div>
+        <!-- Sub-footer -->
+<!-- Sub-footer -->
+<div class="bg-black bg-opacity-40 py-6 px-6 md:px-8 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 gap-4">
+
+        <!-- Copyright -->
+        <p>
+            © 2026 AIHC Conference. All Rights Reserved.
+        </p>
+
+        <!-- Developer Credit -->
+        <p class="flex items-center gap-2">
+            Website developed by
+            <span class="text-gray-300 font-medium">
+                Kondapalkula Sricharan Rao
+            </span>
+            <a href="https://github.com/Sricharan1626/"
+               target="_blank"
+               class="text-gray-400 hover:text-gray-200 transition-colors duration-200">
+
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     viewBox="0 0 24 24"
+                     fill="currentColor"
+                     class="w-4 h-4 opacity-80 hover:opacity-100 transition">
+                    <path fill-rule="evenodd"
+                        d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 
+                        9.504.5.092.682-.217.682-.483 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343
+                        -.454-1.158-1.11-1.466-1.11-1.466-.907-.62.069-.608.069-.608
+                        1.003.071 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 
+                        2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 
+                        0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 
+                        0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 
+                        1.705.115 2.504.337 1.909-1.296 2.748-1.026 
+                        2.748-1.026.546 1.378.202 2.397.1 2.65.64.7 
+                        1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 
+                        4.943.359.309.678.918.678 1.852 0 1.337-.012 
+                        2.416-.012 2.744 0 .268.18.58.688.482A10.019 
+                        10.019 0 0022 12.017C22 6.484 17.523 2 12 2z"
+                        clip-rule="evenodd"/>
+                </svg>
+
+            </a>
+        </p>
+
+        <!-- Social Icons -->
+        <div class="flex space-x-5">
+            <a href="#" class="hover:text-gray-200 transition"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="hover:text-gray-200 transition"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="hover:text-gray-200 transition"><i class="fab fa-linkedin-in"></i></a>
         </div>
+
+    </div>
+</div>
+
     </footer>
     
    <script>
@@ -1096,39 +1264,85 @@ document.addEventListener("DOMContentLoaded", function () {
     const slider = document.getElementById("slider-wrapper");
     const dotsContainer = document.getElementById("slider-dots");
 
-    if (!slider || !dotsContainer) return;
+    if (slider && dotsContainer) {
 
-    const slides = slider.children;
-    const totalSlides = slides.length;
-    let currentIndex = 0;
-    const dots = [];
+        const slides = slider.children;
+        const totalSlides = slides.length;
+        let currentIndex = 0;
+        const dots = [];
 
-    for (let i = 0; i < totalSlides; i++) {
-        const dot = document.createElement("div");
-        dot.classList.add("dot");
-        if (i === 0) dot.classList.add("active");
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement("div");
+            dot.classList.add("dot");
+            if (i === 0) dot.classList.add("active");
 
-        dot.addEventListener("click", () => goToSlide(i));
-        dotsContainer.appendChild(dot);
-        dots.push(dot);
+            dot.addEventListener("click", () => goToSlide(i));
+            dotsContainer.appendChild(dot);
+            dots.push(dot);
+        }
+
+        function updateDots() {
+            dots.forEach((d, i) => {
+                d.classList.toggle("active", i === currentIndex);
+            });
+        }
+
+        function goToSlide(index) {
+            currentIndex = index;
+            slider.style.transform = `translateX(-${index * 100}%)`;
+            updateDots();
+        }
+
+        setInterval(() => {
+            goToSlide((currentIndex + 1) % totalSlides);
+        }, 5000);
     }
 
-    function updateDots() {
-        dots.forEach((d, i) => {
-            d.classList.toggle("active", i === currentIndex);
-        });
+    /* ==============================
+       TIMER
+    ============================== */
+    // Jan 23, 2027 is the target date
+    const countDownDate = new Date(2027, 0, 23, 9, 0, 0).getTime();
+
+    const timerSection = document.getElementById("countdown-section");
+    const daysEl = document.getElementById("days");
+    const hoursEl = document.getElementById("hours");
+    const minutesEl = document.getElementById("minutes");
+    const secondsEl = document.getElementById("seconds");
+
+    if (daysEl && hoursEl && minutesEl && secondsEl) {
+        
+        // Initial call to avoid 1-second delay
+        updateTimer();
+        
+        const interval = setInterval(updateTimer, 1000);
+
+        function updateTimer() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+
+            if (distance <= 0) {
+                clearInterval(interval);
+                if (timerSection) {
+                    timerSection.innerHTML =
+                        '<div class="text-center text-white py-10">' +
+                        '<h2 class="text-3xl font-bold">The Conference Has Begun!</h2>' +
+                        '</div>';
+                }
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((distance / (1000 * 60)) % 60);
+            const seconds = Math.floor((distance / 1000) % 60);
+
+            daysEl.textContent = String(days).padStart(2, "0");
+            hoursEl.textContent = String(hours).padStart(2, "0");
+            minutesEl.textContent = String(minutes).padStart(2, "0");
+            secondsEl.textContent = String(seconds).padStart(2, "0");
+        }
     }
-
-    function goToSlide(index) {
-        currentIndex = index;
-        slider.style.transform = `translateX(-${index * 100}%)`;
-        updateDots();
-    }
-
-    setInterval(() => {
-        goToSlide((currentIndex + 1) % totalSlides);
-    }, 5000);
-
 });
 </script>
 
