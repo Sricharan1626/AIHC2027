@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIHC 2027</title>
+    <link rel="icon" href="assets/logo-sit.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/Fdistinguishedss2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* Simple fade-in animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        #location .map-container {
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+      padding-bottom: 1%;
+    }
+
+    
+
+    #location iframe {
+      border: 0;
+      width: 100%;
+      height: 400px;
+    }
+    .section-title {
+      text-align: center;
+      padding-bottom: 30px;
+    }
+
+    .section-title h2 {
+      font-size: 13px;
+      letter-spacing: 1px;
+      font-weight: 700;
+      padding: 8px 20px;
+      margin: 0;
+      background: #fdeff4;
+      color: #ff6600;
+      display: inline-block;
+      text-transform: uppercase;
+      border-radius: 50px;
+    }
+    .section-title p {
+      margin: 15px auto 0 auto;
+      font-weight: 600;
+       color: #333;
+       font-size: 28px;
+       text-transform: uppercase;
+    }
+    
+    @keyframes newsTickerScroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-news {
+  animation: newsTickerScroll 15s linear infinite;
+}
+    .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 9999px;
+    background-color: #e5e7eb; /* gray-300 */
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    width: 28px;
+    background-color: #ffffff; /* white */
+}
+
+
+
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header -->
+    <nav class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-sm shadow-md z-50">
+        <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+            <a href="#home" class="flex items-center space-x-2">
+                <img src="assets/logo.svg" alt="AIHC 2027" class="h-20 w-auto">
+                
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a class="text-gray-700 hover:text-blue-600 transition-colors font-medium" href="index.html#home">Home</a>
+                <a href="index.html#about" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">About</a>
+                <a href="index.html#committees" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Committees</a>
+                <a href="Place.html?scroll=places" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Places</a>
+                 <div class="relative group">
+                    <button class="text-gray-700 hover:text-blue-600 transition-colors font-medium flex items-center">
+                        For Authors
+                        <svg class="ml-1 h-4 w-4 transform transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="absolute left-0 top-full bg-white shadow-lg rounded-md py-2 w-48 z-10 border border-gray-100 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity">
+                        
+                        <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600" href="Call_for_paper.html">Call for Papers</a>
+                        <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600" href="Instruction_for_authors.html">Instruction for Authors</a>
+                        <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600" href="Submission_Guidelines.html">Submission Guidelines</a>
+                    </div>
+                </div>
+                <a href="https://cmt3.research.microsoft.com/AIHC2027" class="bg-blue-600 text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-300">Submit Paper</a>
+            </div>
+            <button id="mobile-menu-button" class="text-gray-800 text-2xl md:hidden z-[110]" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+         <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-6 absolute top-full left-0 w-full shadow-lg">
+            <a href="index.html#home" class="block text-gray-700 hover:text-blue-600 py-2">Home</a>
+            <a href="index.html#about" class="block text-gray-700 hover:text-blue-600 py-2">About</a>
+            <a href="index.html#committees" class="block text-gray-700 hover:text-blue-600 py-2">Committees</a>
+            <a href="Place.html?scroll=places" class="block text-gray-700 hover:text-blue-600 py-2">Places</a>
+            <a href="Call_for_paper.html" class="block text-gray-700 hover:text-blue-600 py-2">Call for paper</a>
+            <a href="Instruction_for_authors.html" class="block text-gray-700 hover:text-blue-600 py-2">Instructions for Authors</a>
+            <a href="Submission_Guidelines.html" class="block text-gray-700 hover:text-blue-600 py-2">Sbmission Guidelines</a>
+             <a href="https://cmt3.research.microsoft.com/AIHC2027" class="mt-4 inline-block bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-all w-full text-center">Submit Paper</a>
+             
+        </div>
+    </nav>
+ 
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 md:pt-32 bg-white" style="scroll-margin-top:6rem;"></section>
+
+</section>
+
+
+    <!-- Submission Guidelines Section -->
+    <section id="about" class="bg-white py-20 px-6 md:px-16">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-blue-800 mb-4">Submission Guidelines</h2>
+            <div class="w-24 h-1.5 bg-blue-600 mx-auto"></div>
+        </div>
+        <div class="max-w-6xl mx-auto">
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-100 rounded-xl p-8 mb-8 shadow-lg border border-blue-100 text-justify">
+                <ul class="list-disc ml-5 space-y-3 text-gray-800 leading-relaxed">
+                    <li>Papers should be original and not currently under review at another venue.</li>
+                    <li>To help ensure correct formatting, please use the IEEE style files for conference proceedings as a template for your submission. These include LaTeX and Word style files, which are available at <a href="https://template-selector.ieee.org/secure/templateSelector/publicationType" target="_blank" class="text-blue-600 hover:underline">IEEE Template Selector</a>.</li>
+                    <li>Each long paper should have at most 6 pages including figures, tables and references. A maximum of two extra pages per paper is allowed, but with additional charge (100 USD charge per page).</li>
+                    <li>All papers must be submitted through CMT platform only: <a href="https://cmt3.research.microsoft.com/IIITCON2026/" target="_blank" class="text-blue-600 hover:underline">CMT Submission Link</a></li>
+                    <li>The papers need to be submitted online, where they will be reviewed, and the decisions and reviewers comments would be sent to the corresponding author.</li>
+                    <li>Paper Formatting: double column, single spaced, #10 point Times Roman font. Please make sure to use the official IEEE style.</li>
+                    <li>Only PDF files will be accepted for the review process. We will follow a double-blind review process.</li>
+                    <li>New authors cannot be added after submission deadline.</li>
+                    <li class="font-semibold text-red-600">Do not submit Review / Survey Paper / Out of Scope paper (Submit paper with original technical outcomes)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Review Process Section -->
+    <section class="bg-white py-20 px-6 md:px-16">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-blue-800 mb-4">Review Process</h2>
+            <div class="w-24 h-1.5 bg-blue-600 mx-auto"></div>
+        </div>
+        <div class="max-w-6xl mx-auto">
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-100 rounded-xl p-8 mb-8 shadow-lg border border-blue-100 text-justify">
+                <p class="text-gray-800 leading-relaxed text-lg mb-4"><strong>Peer review is vital to the quality of published research. Our Review process is based on double Blind Review Process.</strong></p>
+                <div class="space-y-4 text-gray-700">
+                    <p>In a 'Blind Review' scientific papers are evaluated by a group of experts from similar fields to make sure it meets the necessary standards for acceptance and publication.</p>
+                    <p>We recommend peer double-blind review for all conference papers before publication.</p>
+                    <p>The Conference’s Technical Program Committee, nominated by the Technical Program Chair, collaborates to review and discuss submitted papers. Review is done during a fixed window of time and all authors are notified of the decision on their paper at the same time. The Technical Program Chair is ultimately responsible for the selection of every accepted paper.</p>
+                    <p>In double-blind, neither the author nor the reviewers are aware of each other’s identity. In this model, the anonymity of the reviewer ensures that the reviewer can give an honest and impartial evaluation of the paper. We use the single-blind review format.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plagiarism & Copyright Policy Section -->
+    <section id="policies" class="bg-white py-20 px-6 md:px-16">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-blue-800 mb-4">Plagiarism & Copyright Policy</h2>
+            <div class="w-24 h-1.5 bg-blue-600 mx-auto"></div>
+        </div>
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+            <!-- Plagiarism Policy -->
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-100 rounded-xl p-8 shadow-lg border border-blue-100 text-justify">
+                <h3 class="text-2xl font-bold text-blue-800 mb-4 flex items-center">
+                    <i class="fas fa-exclamation-triangle mr-3 text-orange-500"></i>Plagiarism Policy
+                </h3>
+                <div class="text-gray-800 space-y-4">
+                    <p>Whether intentional or not, plagiarism is a serious violation. Plagiarism is copying ideas, text, data and other creative work (e.g. tables, figures and graphs) and presenting it as original research without proper citation. We define plagiarism as a case in which a paper reproduces another work with at least <strong>20% similarity</strong> and without citation.</p>
+                    <p>We are very serious about Plagiarism Content; we accept only original articles. The article may be rejected at any time if found plagiarized.</p>
+                    <p class="text-sm">
+                        For more information refer IEEE page – <a href="https://www.ieee.org/publications/rights/plagiarism/plagiarism.html" target="_blank" class="text-blue-600 hover:underline font-semibold">A Plagiarism FAQ</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Copyright Policy -->
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-100 rounded-xl p-8 shadow-lg border border-blue-100 text-justify">
+                <h3 class="text-2xl font-bold text-blue-800 mb-4 flex items-center">
+                    <i class="fas fa-copyright mr-3 text-blue-600"></i>Copyright Policy
+                </h3>
+                <p class="text-gray-800 leading-relaxed">
+                    If an author would like to post their papers electronically on any website, any FTP site, or any other electronic dissemination technique, they must include the IEEE Copyright notice on the initial screen displaying the IEEE-copyrighted material.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Presentation Guidelines Section -->
+    <section id="presentation-guidelines" class="bg-white py-20 px-6 md:px-16">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-blue-800 mb-4">Presentation Guidelines</h2>
+            <div class="w-24 h-1.5 bg-blue-600 mx-auto"></div>
+        </div>
+        <div class="max-w-6xl mx-auto">
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-100 rounded-xl p-8 shadow-lg border border-blue-100">
+                <ul class="list-disc ml-5 space-y-3 text-gray-800 leading-relaxed text-justify">
+                    <li>Each oral presentation is limited to <strong>15 minutes</strong> including questions and answers (Q&amp;As). Length of the presentation material should be commensurate within the allocated time. You are requested to load your PowerPoint presentation materials before the sessions start.</li>
+                    <li>Authors must prepare their oral presentations to be sure to convey their message in clear and sharp manner, including giving outline of the key principles, facts and results. More detailed discussions can continue during the breaks.</li>
+                    <li>We recommend the <strong>PPT/PPTX/PDF</strong> format.</li>
+                    <li>All videos or animations in the presentation must run automatically!</li>
+                    <li>All meeting rooms are equipped with the following audio-visual equipment:
+                        <ul class="list-circle ml-6 mt-2 space-y-1 text-gray-700">
+                            <li><i class="fas fa-check text-blue-500 mr-2"></i>One Projector</li>
+                            <li><i class="fas fa-check text-blue-500 mr-2"></i>One Screen</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto py-16 px-6 md:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            <!-- About -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">AIHC</h3>
+                <p class="text-gray-400 text-sm">International Conference on AI in Healthcare (AIHC 2027)</p>
+            </div>
+            <!-- Quick Links -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="index.html#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+                    <li><a href="index.html#about" class="text-gray-400 hover:text-white transition">About</a></li>
+                    <li><a href="index.html#committees" class="text-gray-400 hover:text-white transition">Committees</a></li>
+                    <li><a href="index.html#speakers" class="text-gray-400 hover:text-white transition">Speakers</a></li>
+                    <li><a href="index.html#registration" class="text-gray-400 hover:text-white transition">Registration</a></li>
+                    <li><a href="CMT_ACKNOWLEDGMENT.html" class="text-gray-400 hover:text-white transition">CMT_ACKNOWLEDGMENT</a></li>
+                </ul>
+            </div>
+            <!-- Venue -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">Conference Venue</h3>
+                <p class="text-gray-400 text-sm">
+                    Survey Number 292, Off Bangalore Highway,
+                    Modallaguda (V), Nandigama (M), <br>
+                    Rangareddy Distbr, Hyderabad,<br>
+                    Telangana, India, Pin Code : 509217
+                </p>
+                <a href="https://maps.app.goo.gl/SUthxxUUNDHbzbkRA" target="_blank" class="text-blue-400 hover:text-blue-300 mt-2 inline-block text-sm">View on Google Maps</a>
+            </div>
+            <!-- Contact -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">Contact Organizers</h3>
+                 <div class="space-y-2 text-sm">
+                    <p class="text-gray-400"><i class="fas fa-envelope mr-2"></i><a href="mailto:ramasubbareddy@sithyd.siu.edu.in" class="hover:text-white transition">ramasubbareddy@sithyd.siu.edu.in</a></p>
+                    <p class="text-gray-400"><i class="fas fa-phone mr-2"></i>Dr. Somula Ramasubbareddy: <a href="tel:+917013594626" class="hover:text-white transition">+91 7013594626</a></p>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- Sub-footer -->
+        <div class="bg-black bg-opacity-20 py-6 px-6 md:px-8">
+            <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-sm gap-4">
+                <p class="text-gray-500">© 2026 Conference Conference. All Rights Reserved.</p>
+                <div class="flex space-x-5">
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f fa-lg"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    </body>
+    </html>
