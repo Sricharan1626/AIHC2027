@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,159 +8,266 @@
     <link rel="icon" href="assets/logo-sit.png" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/Fdistinguishedss2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/Fdistinguishedss2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
         }
+
         /* Simple fade-in animations */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
+
         .animate-fade-in {
             animation: fadeIn 0.8s ease-out forwards;
         }
+
         #location .map-container {
-      overflow: hidden;
-      border-radius: 10px;
-      box-shadow: 0 5px 25px rgba(0,0,0,0.1);
-      padding-bottom: 1%;
-    }
-
-    
-
-    #location iframe {
-      border: 0;
-      width: 100%;
-      height: 400px;
-    }
-    .section-title {
-      text-align: center;
-      padding-bottom: 30px;
-    }
-
-    .section-title h2 {
-      font-size: 13px;
-      letter-spacing: 1px;
-      font-weight: 700;
-      padding: 8px 20px;
-      margin: 0;
-      background: #fdeff4;
-      color: #ff6600;
-      display: inline-block;
-      text-transform: uppercase;
-      border-radius: 50px;
-    }
-    .section-title p {
-      margin: 15px auto 0 auto;
-      font-weight: 600;
-       color: #333;
-       font-size: 28px;
-       text-transform: uppercase;
-    }
-    
-    @keyframes newsTickerScroll {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
-}
-
-.animate-news {
-  animation: newsTickerScroll 15s linear infinite;
-}
-    .dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 9999px;
-    background-color: #e5e7eb; /* gray-300 */
-    transition: all 0.3s ease;
-}
-
-.dot.active {
-    width: 28px;
-    background-color: #ffffff; /* white */
-}
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+            padding-bottom: 1%;
+        }
 
 
 
+        #location iframe {
+            border: 0;
+            width: 100%;
+            height: 400px;
+        }
+
+        .section-title {
+            text-align: center;
+            padding-bottom: 30px;
+        }
+
+        .section-title h2 {
+            font-size: 13px;
+            letter-spacing: 1px;
+            font-weight: 700;
+            padding: 8px 20px;
+            margin: 0;
+            background: #fdeff4;
+            color: #ff6600;
+            display: inline-block;
+            text-transform: uppercase;
+            border-radius: 50px;
+        }
+
+        .section-title p {
+            margin: 15px auto 0 auto;
+            font-weight: 600;
+            color: #333;
+            font-size: 28px;
+            text-transform: uppercase;
+        }
+
+        @keyframes newsTickerScroll {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .animate-news {
+            animation: newsTickerScroll 15s linear infinite;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 9999px;
+            background-color: #e5e7eb;
+            /* gray-300 */
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            width: 28px;
+            background-color: #ffffff;
+            /* white */
+        }
     </style>
 </head>
+
 <body class="bg-gray-50">
 
     <!-- Header -->
-    <nav class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md
+    <nav class="sticky top-0 left-0 w-full bg-white/95 backdrop-blur-md
             shadow-md z-50 border-b border-gray-200">
 
-    <div class="flex justify-between items-center h-20 px-4 sm:px-6
-                max-w-7xl mx-auto">
+        <!-- Top Brand Row: Left AIHC Logo + Title | Center Search | Right SIT & IEEE Logos -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-2.5
+                flex items-center justify-between gap-2 sm:gap-4">
 
-        <!-- Logo -->
-        <a href="index.html#home"
-           class="flex items-center gap-3 sm:gap-4 shrink-0">
-            <img src="assets/logo.svg"
-                 alt="AIHC 2027"
-                 class="h-12 sm:h-14 w-auto object-contain">
-        </a>
-
-        <!-- Desktop Navigation -->
-        <div class="hidden lg:flex items-center gap-5 xl:gap-7">
-
-            <a href="index.html#home"
-               class="whitespace-nowrap text-gray-700 hover:text-blue-600
-                      transition-colors font-medium">
-                Home
+            <!-- Left: AIHC Logo + Conference Title -->
+            <a href="index.html"
+               class="flex items-center gap-2.5 sm:gap-3 min-w-0 shrink-0 max-w-[75%] md:max-w-[260px] lg:max-w-none">
+                <img src="assets/aihc_logo.jpeg" alt="AIHC 2027 Logo"
+                    class="h-11 sm:h-12 lg:h-14 w-auto object-contain shrink-0 rounded-md">
+                <div class="min-w-0 leading-tight">
+                    <span class="block text-blue-800 font-extrabold text-sm sm:text-base lg:text-lg tracking-tight">
+                        AIHC 2027
+                    </span>
+                    <span class="block text-gray-700 font-semibold text-[11px] lg:text-xs xl:text-sm leading-snug">
+                        International Conference on AI in Healthcare
+                    </span>
+                </div>
             </a>
 
-            <a href="index.html#about"
-               class="whitespace-nowrap text-gray-700 hover:text-blue-600
-                      transition-colors font-medium">
-                About
-            </a>
+            <!-- Center: Global Site Search (md+) -->
+            <div class="hidden md:block flex-1 max-w-xs lg:max-w-sm xl:max-w-md mx-2 relative"
+                 data-site-search>
+                <div class="relative flex items-center">
+                    <i class="fas fa-search absolute left-3 text-gray-400 text-sm pointer-events-none"
+                       aria-hidden="true"></i>
+                    <input type="text"
+                           inputmode="search"
+                           role="searchbox"
+                           data-search-input
+                           placeholder="Search pages, tracks, dates, fees..."
+                           aria-label="Search conference website"
+                           aria-expanded="false"
+                           autocomplete="off"
+                           class="w-full pl-9 pr-14 py-2 text-sm text-gray-800 bg-gray-50
+                                  border border-gray-200 rounded-xl
+                                  focus:bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-100
+                                  focus:outline-none transition-all">
+                    <button type="button"
+                            data-search-clear
+                            aria-label="Clear search"
+                            class="hidden absolute right-8 text-gray-400 hover:text-gray-600 p-1">
+                        <i class="fas fa-times text-xs" aria-hidden="true"></i>
+                    </button>
+                    <kbd class="hidden xl:inline-block absolute right-2.5 px-1.5 py-0.5 text-[10px] font-semibold
+                                text-gray-400 bg-white border border-gray-200 rounded pointer-events-none">/</kbd>
+                </div>
+                <div data-search-results
+                     class="hidden absolute left-0 right-0 top-full mt-2 bg-white rounded-xl shadow-2xl
+                            border border-gray-200 overflow-hidden z-[60]"></div>
+            </div>
 
-            <a href="index.html#committees"
-               class="whitespace-nowrap text-gray-700 hover:text-blue-600
-                      transition-colors font-medium">
-                Committees
-            </a>
+            <!-- Right: SIT Logo + IEEE Logo + Mobile Menu Button -->
+            <div class="flex items-center gap-2 sm:gap-3 lg:gap-4 shrink-0">
+                <div class="hidden sm:flex items-center gap-2 sm:gap-3 lg:gap-4">
+                    <img src="assets/logo.svg" alt="Symbiosis Institute of Technology, Hyderabad"
+                        class="h-7 lg:h-10 w-auto object-contain">
+                    <img src="assets/ieee.png" alt="IEEE Hyderabad Section" class="h-6 lg:h-9 w-auto object-contain">
+                </div>
 
-            <!-- Registration -->
-            <a href="registration.html"
-               class="whitespace-nowrap text-blue-700 hover:text-blue-800
-                      transition-colors font-semibold">
-                Registration
-            </a>
-
-            <a href="Place.html?scroll=places"
-               class="whitespace-nowrap text-gray-700 hover:text-blue-600
-                      transition-colors font-medium">
-                Places
-            </a>
-
-            <!-- For Authors Dropdown -->
-            <div class="relative group">
-
-                <button type="button"
-                        class="flex items-center gap-1.5 whitespace-nowrap
-                               text-gray-700 hover:text-blue-600
-                               transition-colors font-medium py-3">
-                    For Authors
-
-                    <svg class="h-4 w-4 transition-transform duration-200
-                                group-hover:rotate-180"
-                         fill="none"
-                         stroke="currentColor"
-                         viewBox="0 0 24 24"
-                         aria-hidden="true">
-                        <path stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="2"
-                              d="M19 9l-7 7-7-7">
-                        </path>
-                    </svg>
+                <!-- Mobile / Tablet Menu Button -->
+                <button id="mobile-menu-button" type="button" class="text-gray-800 text-2xl lg:hidden
+                           w-11 h-11 flex items-center justify-center
+                           rounded-lg hover:bg-gray-100 transition-colors" aria-label="Toggle navigation menu"
+                    aria-controls="mobile-menu" aria-expanded="false">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
                 </button>
+            </div>
 
-                <div class="absolute left-0 top-full pt-1 w-56
+        </div>
+
+        <!-- Mobile Logos Strip (xs screens) -->
+        <div class="sm:hidden border-t border-gray-100 bg-gray-50/80 px-4 py-1.5
+                flex items-center justify-center gap-4">
+            <img src="assets/logo.svg" alt="Symbiosis Institute of Technology, Hyderabad"
+                class="h-7 w-auto object-contain max-w-[60%]">
+            <img src="assets/ieee.png" alt="IEEE Hyderabad Section" class="h-6 w-auto object-contain">
+        </div>
+
+        <!-- Mobile Search Bar (< md screens) -->
+        <div class="md:hidden border-t border-gray-100 bg-white px-4 py-2 relative"
+             data-site-search>
+            <div class="relative flex items-center">
+                <i class="fas fa-search absolute left-3 text-gray-400 text-sm pointer-events-none"
+                   aria-hidden="true"></i>
+                <input type="text"
+                       inputmode="search"
+                       role="searchbox"
+                       data-search-input
+                       placeholder="Search pages, tracks, dates, fees..."
+                       aria-label="Search conference website"
+                       aria-expanded="false"
+                       autocomplete="off"
+                       class="w-full pl-9 pr-9 py-2 text-sm text-gray-800 bg-gray-50
+                              border border-gray-200 rounded-xl
+                              focus:bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-100
+                              focus:outline-none transition-all">
+                <button type="button"
+                        data-search-clear
+                        aria-label="Clear search"
+                        class="hidden absolute right-2.5 text-gray-400 hover:text-gray-600 p-1">
+                    <i class="fas fa-times text-xs" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div data-search-results
+                 class="hidden absolute left-4 right-4 top-full mt-1 bg-white rounded-xl shadow-2xl
+                        border border-gray-200 overflow-hidden z-[60]"></div>
+        </div>
+
+        <!-- Desktop Navigation (Below Brand Row) -->
+        <div class="hidden lg:block border-t border-gray-100 bg-white/90">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 h-12
+                    flex items-center justify-center gap-6 xl:gap-8">
+
+                <a href="index.html#home" class="whitespace-nowrap text-gray-700 hover:text-blue-600
+                      transition-colors font-medium">
+                    Home
+                </a>
+
+                <a href="index.html#about" class="whitespace-nowrap text-gray-700 hover:text-blue-600
+                      transition-colors font-medium">
+                    About
+                </a>
+
+                <a href="index.html#committees" class="whitespace-nowrap text-gray-700 hover:text-blue-600
+                      transition-colors font-medium">
+                    Committees
+                </a>
+
+                <!-- Registration -->
+                <a href="registration.html" class="whitespace-nowrap text-gray-700 hover:text-blue-600
+                      transition-colors font-medium">
+                    Registration
+                </a>
+
+                <a href="Place.html?scroll=places" class="whitespace-nowrap text-gray-700 hover:text-blue-600
+                      transition-colors font-medium">
+                    Places
+                </a>
+
+                <!-- For Authors Dropdown -->
+                <div class="relative group">
+
+                    <button type="button" aria-haspopup="true" class="flex items-center gap-1.5 whitespace-nowrap
+                               text-blue-700 font-semibold
+                               transition-colors py-3">
+                        For Authors
+
+                        <svg class="h-4 w-4 transition-transform duration-200
+                                group-hover:rotate-180
+                                group-focus-within:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+
+                    <div class="absolute left-0 top-full pt-1 w-56
                             opacity-0 invisible translate-y-1
                             group-hover:opacity-100 group-hover:visible
                             group-hover:translate-y-0
@@ -168,163 +276,132 @@
                             group-focus-within:translate-y-0
                             transition-all duration-200">
 
-                    <div class="bg-white shadow-xl rounded-xl py-2
+                        <div class="bg-white shadow-xl rounded-xl py-2
                                 border border-gray-100 overflow-hidden">
 
-                        <a href="Call_for_paper.html"
-                           aria-current="page"
-                           class="flex items-center gap-3 px-4 py-3
+                            <a href="Call_for_paper.html" aria-current="page" class="flex items-center gap-3 px-4 py-3
                                   text-sm text-blue-700 bg-blue-50 font-semibold">
-                            <i class="fas fa-file-alt w-4"></i>
-                            Call for Papers
-                        </a>
+                                <i class="fas fa-file-alt w-4"></i>
+                                Call for Papers
+                            </a>
 
-                        <a href="Instruction_for_authors.html"
-                           class="flex items-center gap-3 px-4 py-3
+                            <a href="Instruction_for_authors.html" class="flex items-center gap-3 px-4 py-3
                                   text-sm text-gray-700 hover:bg-blue-50
                                   hover:text-blue-700 transition-colors">
-                            <i class="fas fa-book-open w-4 text-blue-600"></i>
-                            Instructions for Authors
-                        </a>
+                                <i class="fas fa-book-open w-4 text-blue-600"></i>
+                                Instructions for Authors
+                            </a>
 
-                        <a href="Submission_Guidelines.html"
-                           class="flex items-center gap-3 px-4 py-3
+                            <a href="Submission_Guidelines.html" class="flex items-center gap-3 px-4 py-3
                                   text-sm text-gray-700 hover:bg-blue-50
                                   hover:text-blue-700 transition-colors">
-                            <i class="fas fa-list-check w-4 text-blue-600"></i>
-                            Submission Guidelines
-                        </a>
+                                <i class="fas fa-list-check w-4 text-blue-600"></i>
+                                Submission Guidelines
+                            </a>
 
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Submit Paper -->
-            <a href="https://cmt3.research.microsoft.com/AIHC2027"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="inline-flex items-center justify-center gap-2
+                <!-- Submit Paper -->
+                <a href="https://cmt3.research.microsoft.com/AIHC2027" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2
                       whitespace-nowrap bg-blue-600 text-white
-                      px-4 xl:px-5 py-2.5 rounded-lg font-semibold
+                      px-4 xl:px-5 py-1.5 rounded-lg font-semibold
                       hover:bg-blue-700 transition-all duration-300
                       shadow-md hover:shadow-lg">
-                <i class="fas fa-upload text-sm"></i>
-                Submit Paper
-            </a>
-
-        </div>
-
-        <!-- Mobile / Tablet Menu Button -->
-        <button id="mobile-menu-button"
-                type="button"
-                class="text-gray-800 text-2xl lg:hidden
-                       w-11 h-11 flex items-center justify-center
-                       rounded-lg hover:bg-gray-100 transition-colors"
-                aria-label="Toggle navigation menu"
-                aria-controls="mobile-menu"
-                aria-expanded="false">
-            <i class="fas fa-bars" aria-hidden="true"></i>
-        </button>
-
-    </div>
-
-    <!-- Mobile / Tablet Menu -->
-    <div id="mobile-menu"
-         class="hidden lg:hidden bg-white border-t border-gray-200
-                shadow-lg max-h-[calc(100vh-5rem)] overflow-y-auto">
-
-        <div class="max-w-7xl mx-auto px-5 py-4 space-y-1">
-
-            <a href="index.html#home"
-               class="flex items-center gap-3 rounded-lg px-4 py-3
-                      text-gray-700 hover:text-blue-700 hover:bg-blue-50">
-                <i class="fas fa-house w-5 text-center text-gray-400"></i>
-                Home
-            </a>
-
-            <a href="index.html#about"
-               class="flex items-center gap-3 rounded-lg px-4 py-3
-                      text-gray-700 hover:text-blue-700 hover:bg-blue-50">
-                <i class="fas fa-circle-info w-5 text-center text-gray-400"></i>
-                About
-            </a>
-
-            <a href="index.html#committees"
-               class="flex items-center gap-3 rounded-lg px-4 py-3
-                      text-gray-700 hover:text-blue-700 hover:bg-blue-50">
-                <i class="fas fa-users w-5 text-center text-gray-400"></i>
-                Committees
-            </a>
-
-            <!-- Registration -->
-            <a href="registration.html"
-               class="flex items-center gap-3 rounded-lg px-4 py-3
-                      bg-blue-50 text-blue-700 font-semibold
-                      hover:bg-blue-100 transition-colors">
-                <i class="fas fa-ticket-alt w-5 text-center"></i>
-                Registration
-                <i class="fas fa-arrow-right ml-auto text-sm"></i>
-            </a>
-
-            <a href="Place.html?scroll=places"
-               class="flex items-center gap-3 rounded-lg px-4 py-3
-                      text-gray-700 hover:text-blue-700 hover:bg-blue-50">
-                <i class="fas fa-location-dot w-5 text-center text-gray-400"></i>
-                Places
-            </a>
-
-            <!-- Author Links -->
-            <div class="pt-2 mt-2 border-t border-gray-100">
-
-                <p class="px-4 py-2 text-xs font-bold uppercase
-                          tracking-wider text-gray-400">
-                    For Authors
-                </p>
-
-                <a href="Call_for_paper.html"
-                   aria-current="page"
-                   class="flex items-center gap-3 rounded-lg px-4 py-3
-                          bg-blue-50 text-blue-700 font-semibold">
-                    <i class="fas fa-file-alt w-5 text-center"></i>
-                    Call for Papers
-                </a>
-
-                <a href="Instruction_for_authors.html"
-                   class="flex items-center gap-3 rounded-lg px-4 py-3
-                          text-gray-700 hover:text-blue-700 hover:bg-blue-50">
-                    <i class="fas fa-book-open w-5 text-center text-gray-400"></i>
-                    Instructions for Authors
-                </a>
-
-                <a href="Submission_Guidelines.html"
-                   class="flex items-center gap-3 rounded-lg px-4 py-3
-                          text-gray-700 hover:text-blue-700 hover:bg-blue-50">
-                    <i class="fas fa-list-check w-5 text-center text-gray-400"></i>
-                    Submission Guidelines
-                </a>
-
-            </div>
-
-            <!-- Submit Paper -->
-            <div class="pt-4 mt-3 border-t border-gray-100">
-                <a href="https://cmt3.research.microsoft.com/AIHC2027"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="flex items-center justify-center gap-2 w-full
-                          bg-blue-600 text-white px-6 py-3.5 rounded-xl
-                          font-semibold hover:bg-blue-700 transition-all shadow-md">
-                    <i class="fas fa-upload"></i>
+                    <i class="fas fa-upload text-sm"></i>
                     Submit Paper
                 </a>
+
             </div>
-
         </div>
-    </div>
 
-</nav>
- 
+        <!-- Mobile / Tablet Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full
+                bg-white border-t border-gray-200
+                shadow-lg max-h-[calc(100vh-8rem)] overflow-y-auto">
+
+            <div class="max-w-7xl mx-auto px-5 py-4 space-y-1">
+
+                <a href="index.html#home" class="flex items-center gap-3 rounded-lg px-4 py-3
+                      text-gray-700 hover:text-blue-700 hover:bg-blue-50">
+                    <i class="fas fa-house w-5 text-center text-gray-400"></i>
+                    Home
+                </a>
+
+                <a href="index.html#about" class="flex items-center gap-3 rounded-lg px-4 py-3
+                      text-gray-700 hover:text-blue-700 hover:bg-blue-50">
+                    <i class="fas fa-circle-info w-5 text-center text-gray-400"></i>
+                    About
+                </a>
+
+                <a href="index.html#committees" class="flex items-center gap-3 rounded-lg px-4 py-3
+                      text-gray-700 hover:text-blue-700 hover:bg-blue-50">
+                    <i class="fas fa-users w-5 text-center text-gray-400"></i>
+                    Committees
+                </a>
+
+                <!-- Registration -->
+                <a href="registration.html" class="flex items-center gap-3 rounded-lg px-4 py-3
+                      text-gray-700 hover:text-blue-700 hover:bg-blue-50
+                      transition-colors">
+                    <i class="fas fa-ticket-alt w-5 text-center text-gray-400"></i>
+                    Registration
+                    <i class="fas fa-arrow-right ml-auto text-sm"></i>
+                </a>
+
+                <a href="Place.html?scroll=places" class="flex items-center gap-3 rounded-lg px-4 py-3
+                      text-gray-700 hover:text-blue-700 hover:bg-blue-50">
+                    <i class="fas fa-location-dot w-5 text-center text-gray-400"></i>
+                    Places
+                </a>
+
+                <!-- Author Links -->
+                <div class="pt-2 mt-2 border-t border-gray-100">
+
+                    <p class="px-4 py-2 text-xs font-bold uppercase
+                          tracking-wider text-gray-400">
+                        For Authors
+                    </p>
+
+                    <a href="Call_for_paper.html" aria-current="page" class="flex items-center gap-3 rounded-lg px-4 py-3
+                          bg-blue-50 text-blue-700 font-semibold">
+                        <i class="fas fa-file-alt w-5 text-center"></i>
+                        Call for Papers
+                    </a>
+
+                    <a href="Instruction_for_authors.html" class="flex items-center gap-3 rounded-lg px-4 py-3
+                          text-gray-700 hover:text-blue-700 hover:bg-blue-50">
+                        <i class="fas fa-book-open w-5 text-center text-gray-400"></i>
+                        Instructions for Authors
+                    </a>
+
+                    <a href="Submission_Guidelines.html" class="flex items-center gap-3 rounded-lg px-4 py-3
+                          text-gray-700 hover:text-blue-700 hover:bg-blue-50">
+                        <i class="fas fa-list-check w-5 text-center text-gray-400"></i>
+                        Submission Guidelines
+                    </a>
+
+                </div>
+
+                <!-- Submit Paper -->
+                <div class="pt-4 mt-3 border-t border-gray-100">
+                    <a href="https://cmt3.research.microsoft.com/AIHC2027" target="_blank" rel="noopener noreferrer"
+                        class="flex items-center justify-center gap-2 w-full
+                          bg-blue-600 text-white px-6 py-3.5 rounded-xl
+                          font-semibold hover:bg-blue-700 transition-all shadow-md">
+                        <i class="fas fa-upload"></i>
+                        Submit Paper
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+    </nav>
+
     <!-- Hero Section -->
-    <main class="pt-32 pb-20 px-4 md:px-8 max-w-7xl mx-auto space-y-12">
+    <main class="pt-10 pb-20 px-4 md:px-8 max-w-7xl mx-auto space-y-12">
 
         <div class="text-center space-y-8 animate-fade-in">
             <div class="space-y-4">
@@ -337,56 +414,70 @@
             </div>
 
             <div class="flex flex-col sm:flex-row justify-center items-center gap-4 pt-4">
-                <a href="https://cmt3.research.microsoft.com/AIHC2027" class="w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-lg hover:shadow-blue-200 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 group">
+                <a href="https://cmt3.research.microsoft.com/AIHC2027"
+                    class="w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-lg hover:shadow-blue-200 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 group">
                     <i class="fas fa-upload group-hover:animate-bounce"></i>
                     Paper Submission Link
                 </a>
-                <a href="assets/Call_for_paper.pdf" class="w-full sm:w-auto px-8 py-4 bg-white border-2 border-blue-100 hover:border-blue-600 text-gray-700 hover:text-blue-600 font-bold rounded-xl shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center gap-2">
+                <a href="assets/Call_for_paper.pdf"
+                    class="w-full sm:w-auto px-8 py-4 bg-white border-2 border-blue-100 hover:border-blue-600 text-gray-700 hover:text-blue-600 font-bold rounded-xl shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center gap-2">
                     <i class="fas fa-file-pdf"></i>
                     Download Brochure
                 </a>
             </div>
         </div>
 
-        <section class="bg-white rounded-2xl p-8 md:p-10 shadow-xl border border-gray-100 relative overflow-hidden">
-            <div class="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-blue-50 rounded-full blur-3xl opacity-50"></div>
-            
+        <section id="scope" class="bg-white rounded-2xl p-8 md:p-10 shadow-xl border border-gray-100 relative overflow-hidden scroll-mt-36">
+            <div class="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-blue-50 rounded-full blur-3xl opacity-50">
+            </div>
+
             <div class="relative z-10">
                 <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
                     <span class="w-1.5 h-8 bg-blue-600 rounded-full"></span>
                     Conference Scope
                 </h2>
                 <p class="text-gray-600 leading-relaxed text-lg text-justify">
-                    AIHC 2027 focuses on industrial and upcoming frontier technologies, applications of AI in diagnostics, patient care systems, and computational intelligence in medicine. The objectives of the conference are to provide high-quality research and professional interactions for the advancement of science, technology, and fellowship. Papers with new research results are encouraged for submission.
+                    AIHC 2027 focuses on industrial and upcoming frontier technologies, applications of AI in
+                    diagnostics, patient care systems, and computational intelligence in medicine. The objectives of the
+                    conference are to provide high-quality research and professional interactions for the advancement of
+                    science, technology, and fellowship. Papers with new research results are encouraged for submission.
                 </p>
             </div>
         </section>
 
-            <section class="bg-white py-20 px-6 md:px-16">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl md:text-5xl font-bold text-blue-800 mb-4">Conference Program</h2>
-                <p class="text-gray-600 text-lg max-w-3xl mx-auto">Explore technical tracks and engage in thought-provoking discussions.</p>
-            </div>
-            <h3 class="text-3xl font-bold mb-8 text-center text-blue-700">Technical Tracks</h3>
-            <div class="space-y-4 mb-12" id="accordion-tracks">
-                <!-- Accordion items will be injected here by JS -->
-            </div>
-            
-            <h2 class="text-3xl font-bold mb-6 text-center text-blue-700">Panel Discussions</h2>
-            <div class="bg-gradient-to-r from-blue-50 to-indigo-100 rounded-xl p-8 border border-blue-200">
-                <p class="text-gray-800 text-center mb-6">Conference 2027 will host two signature panel discussions:</p>
-                <div class="space-y-4">
-                    <div class="bg-white rounded-lg p-4 shadow-md border-l-4 border-blue-600"><h3 class="font-semibold text-lg text-blue-700">(a) Responsible Innovations in Deep Learning: Shaping Smart, Sustainable, and Ethical Futures</h3></div>
-                    <div class="bg-white rounded-lg p-4 shadow-md border-l-4 border-green-600"><h3 class="font-semibold text-lg text-green-700">(b) Ethical AI and IoT: Creating Human-Centric Intelligent Ecosystems</h3></div>
+        <section class="bg-white py-20 px-6 md:px-16">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-5xl font-bold text-blue-800 mb-4">Conference Program</h2>
+                    <p class="text-gray-600 text-lg max-w-3xl mx-auto">Explore technical tracks and engage in
+                        thought-provoking discussions.</p>
+                </div>
+                <h3 id="tracks" class="text-3xl font-bold mb-8 text-center text-blue-700 scroll-mt-36">Technical Tracks</h3>
+                <div class="space-y-4 mb-12" id="accordion-tracks">
+                    <!-- Accordion items will be injected here by JS -->
+                </div>
+
+                <h2 id="panels" class="text-3xl font-bold mb-6 text-center text-blue-700 scroll-mt-36">Panel Discussions</h2>
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-100 rounded-xl p-8 border border-blue-200">
+                    <p class="text-gray-800 text-center mb-6">Conference 2027 will host two signature panel discussions:
+                    </p>
+                    <div class="space-y-4">
+                        <div class="bg-white rounded-lg p-4 shadow-md border-l-4 border-blue-600">
+                            <h3 class="font-semibold text-lg text-blue-700">(a) Responsible Innovations in Deep
+                                Learning: Shaping Smart, Sustainable, and Ethical Futures</h3>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 shadow-md border-l-4 border-green-600">
+                            <h3 class="font-semibold text-lg text-green-700">(b) Ethical AI and IoT: Creating
+                                Human-Centric Intelligent Ecosystems</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
     </main>
 
-<footer class="bg-gray-900 text-white">
+    <footer class="bg-gray-900 text-white">
         <div class="max-w-7xl mx-auto py-16 px-6 md:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             <!-- About -->
             <div>
@@ -399,10 +490,14 @@
                 <ul class="space-y-2 text-sm">
                     <li><a href="index.html#home" class="text-gray-400 hover:text-white transition">Home</a></li>
                     <li><a href="index.html#about" class="text-gray-400 hover:text-white transition">About</a></li>
-                    <li><a href="index.html#committees" class="text-gray-400 hover:text-white transition">Committees</a></li>
-                    <li><a href="index.html#speakers" class="text-gray-400 hover:text-white transition">Speakers</a></li>
-                    <li><a href="index.html#registration" class="text-gray-400 hover:text-white transition">Registration</a></li>
-                    <li><a href="CMT_ACKNOWLEDGMENT.html" class="text-gray-400 hover:text-white transition">CMT_ACKNOWLEDGMENT</a></li>
+                    <li><a href="index.html#committees" class="text-gray-400 hover:text-white transition">Committees</a>
+                    </li>
+                    <li><a href="index.html#speakers" class="text-gray-400 hover:text-white transition">Speakers</a>
+                    </li>
+                    <li><a href="index.html#registration"
+                            class="text-gray-400 hover:text-white transition">Registration</a></li>
+                    <li><a href="CMT_ACKNOWLEDGMENT.html"
+                            class="text-gray-400 hover:text-white transition">CMT_ACKNOWLEDGMENT</a></li>
                 </ul>
             </div>
             <!-- Venue -->
@@ -414,15 +509,19 @@
                     Rangareddy Distbr, Hyderabad,<br>
                     Telangana, India, Pin Code : 509217
                 </p>
-                <a href="https://maps.app.goo.gl/SUthxxUUNDHbzbkRA" target="_blank" class="text-blue-400 hover:text-blue-300 mt-2 inline-block text-sm">View on Google Maps</a>
+                <a href="https://maps.app.goo.gl/SUthxxUUNDHbzbkRA" target="_blank"
+                    class="text-blue-400 hover:text-blue-300 mt-2 inline-block text-sm">View on Google Maps</a>
             </div>
             <!-- Contact -->
             <div>
                 <h3 class="text-xl font-bold mb-4">Contact Organizers</h3>
-                 <div class="space-y-2 text-sm">
-                    <p class="text-gray-400"><i class="fas fa-envelope mr-2"></i><a href="mailto:ramasubbareddy@sithyd.siu.edu.in" class="hover:text-white transition">ramasubbareddy@sithyd.siu.edu.in</a></p>
-                    <p class="text-gray-400"><i class="fas fa-phone mr-2"></i>Dr. Somula Ramasubbareddy: <a href="tel:+917013594626" class="hover:text-white transition">+91 7013594626</a></p>
-                    
+                <div class="space-y-2 text-sm">
+                    <p class="text-gray-400"><i class="fas fa-envelope mr-2"></i><a
+                            href="mailto:ramasubbareddy.s@sithyd.siu.edu.in"
+                            class="hover:text-white transition">ramasubbareddy.s@sithyd.siu.edu.in</a></p>
+                    <p class="text-gray-400"><i class="fas fa-phone mr-2"></i>Dr. Somula Ramasubbareddy: <a
+                            href="tel:+917013594626" class="hover:text-white transition">+91 7013594626</a></p>
+
                 </div>
             </div>
         </div>
@@ -431,15 +530,18 @@
             <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-sm gap-4">
                 <p class="text-gray-500">© 2026 Conference Conference. All Rights Reserved.</p>
                 <div class="flex space-x-5">
-                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter fa-lg"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f fa-lg"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i
+                            class="fab fa-twitter fa-lg"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i
+                            class="fab fa-facebook-f fa-lg"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i
+                            class="fab fa-linkedin-in fa-lg"></i></a>
                 </div>
             </div>
         </div>
     </footer>
     <script>
-         const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileMenuIcon = mobileMenuButton.querySelector('i');
 
@@ -551,22 +653,22 @@
                 ]
             }
         ];
-        
+
         // ===================================================================
         // END: Your Conference Track Information
         // The code below will automatically build the accordion from your data.
         // ===================================================================
 
         const accordionContainer = document.getElementById('accordion-tracks');
-        
+
         // This loop builds the HTML from the trackData object above
         trackData.forEach(track => {
             const div = document.createElement('div');
             const isSpecial = !!track.isSpecial;
             div.className = `mb-4 bg-white rounded-xl shadow-md transition-transform transform hover:scale-[1.01] duration-200 border ${isSpecial ? 'border-indigo-300 ring-2 ring-indigo-500/20' : 'border-gray-200'}`;
-            
+
             // Build HTML for topics list
-            const topicsHtml = track.topics.map(topic => 
+            const topicsHtml = track.topics.map(topic =>
                 `<li class="text-gray-700">${topic}</li>`
             ).join('');
 
@@ -627,15 +729,15 @@
             `;
             accordionContainer.appendChild(div);
         });
-        
+
         // This is the original accordion click listener, it doesn't need to change.
-        accordionContainer.addEventListener('click', function(e) {
+        accordionContainer.addEventListener('click', function (e) {
             const header = e.target.closest('.cursor-pointer');
             if (header) {
                 const content = header.nextElementSibling;
                 const icon = header.querySelector('i');
                 const isHidden = content.classList.contains('hidden');
-                
+
                 if (isHidden) {
                     content.classList.remove('hidden');
                     icon.classList.remove('fa-plus');
@@ -647,56 +749,58 @@
                 }
             }
         });
-    
 
-document.addEventListener("DOMContentLoaded", () => {
 
-    const slider = document.getElementById("slider-wrapper");
-    const slides = slider.children;
-    const totalSlides = slides.length;
-    let currentIndex = 0;
+        document.addEventListener("DOMContentLoaded", () => {
 
-    // Create dots dynamically
-    const dotsContainer = document.getElementById("slider-dots");
-    let dots = [];
+            const slider = document.getElementById("slider-wrapper");
+            const slides = slider.children;
+            const totalSlides = slides.length;
+            let currentIndex = 0;
 
-    for (let i = 0; i < totalSlides; i++) {
-        let dot = document.createElement("div");
-        dot.classList.add("dot");
-        if (i === 0) dot.classList.add("active");
-        dot.addEventListener("click", () => goToSlide(i));
-        dotsContainer.appendChild(dot);
-        dots.push(dot);
-    }
+            // Create dots dynamically
+            const dotsContainer = document.getElementById("slider-dots");
+            let dots = [];
 
-    function updateDots() {
-        dots.forEach((d, i) => {
-            d.classList.toggle("active", i === currentIndex);
+            for (let i = 0; i < totalSlides; i++) {
+                let dot = document.createElement("div");
+                dot.classList.add("dot");
+                if (i === 0) dot.classList.add("active");
+                dot.addEventListener("click", () => goToSlide(i));
+                dotsContainer.appendChild(dot);
+                dots.push(dot);
+            }
+
+            function updateDots() {
+                dots.forEach((d, i) => {
+                    d.classList.toggle("active", i === currentIndex);
+                });
+            }
+
+            function goToSlide(index) {
+                currentIndex = index;
+                slider.style.transform = `translateX(-${index * 100}%)`;
+                updateDots();
+            }
+
+            function autoSlide() {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                goToSlide(currentIndex);
+            }
+
+            setInterval(autoSlide, 5000); // slide every 3 seconds
         });
-    }
+        const btn = document.getElementById('show-more-btn');
+        const hiddenItems = document.querySelectorAll('.more');
 
-    function goToSlide(index) {
-        currentIndex = index;
-        slider.style.transform = `translateX(-${index * 100}%)`;
-        updateDots();
-    }
-
-    function autoSlide() {
-        currentIndex = (currentIndex + 1) % totalSlides;
-        goToSlide(currentIndex);
-    }
-
-    setInterval(autoSlide, 5000); // slide every 3 seconds
-});
-const btn = document.getElementById('show-more-btn');
-    const hiddenItems = document.querySelectorAll('.more');
-
-    btn.addEventListener('click', () => {
-        hiddenItems.forEach(item => item.classList.remove('hidden'));
-        btn.classList.add('hidden');
-    });
+        btn.addEventListener('click', () => {
+            hiddenItems.forEach(item => item.classList.remove('hidden'));
+            btn.classList.add('hidden');
+        });
     </script>
 
 
-    </body>
-    </html>
+    <script src="assets/search.js" defer></script>
+</body>
+
+</html>
