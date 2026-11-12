@@ -142,159 +142,427 @@
 <body class="bg-gray-50">
 
     <!-- Announcement Modal / Title Card for Deadline Extension -->
-    <div id="deadlineModal" class="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/80 opacity-0 pointer-events-none transition-opacity duration-200" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-        <div id="modalCard" class="relative w-full max-w-2xl bg-white rounded-2xl shadow-2xl border border-blue-200 overflow-hidden transform scale-95 transition-all duration-200">
-            <!-- Modal Header Banner -->
-            <div class="bg-gradient-to-r from-blue-700 via-indigo-700 to-blue-800 px-6 py-5 text-white relative">
-                <div class="flex items-center space-x-2 text-amber-300 font-bold text-xs uppercase tracking-widest mb-1">
-                    <span class="inline-block w-2 h-2 rounded-full bg-amber-400 animate-ping mr-1"></span>
-                    Important Announcement
+```html
+<!-- AIHC 2027 Early Bird Registration Modal -->
+<div id="deadlineModal"
+     class="fixed inset-0 z-[9999] flex items-center justify-center
+            p-4 bg-slate-950/60 opacity-0 pointer-events-none
+            transition-opacity duration-200"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="modalTitle">
+
+    <div id="modalCard"
+         class="relative w-full max-w-xl overflow-hidden
+                rounded-xl bg-white border border-slate-200
+                shadow-2xl scale-95 transition-all duration-200">
+
+        <!-- Colourful Header -->
+        <div class="relative bg-blue-800 px-6 sm:px-8 py-6 text-white">
+
+            <div class="flex items-center justify-between gap-3 mb-4">
+
+                <span class="text-xs font-bold tracking-widest
+                             uppercase text-blue-100">
+                    AIHC 2027
+                </span>
+
+                <span class="inline-flex items-center gap-2
+                             rounded-full bg-amber-400 px-3 py-1
+                             text-[10px] font-extrabold
+                             tracking-wider text-slate-900">
+                    <span class="h-1.5 w-1.5 rounded-full
+                                 bg-slate-900"></span>
+                    EARLY BIRD
+                </span>
+            </div>
+
+            <h2 id="modalTitle"
+                class="text-2xl sm:text-3xl font-bold
+                       leading-tight tracking-tight">
+                Early Bird Registration
+            </h2>
+
+            <p class="mt-2 text-sm leading-6 text-blue-100">
+                International Conference on AI in Healthcare
+            </p>
+
+            <!-- Close Button -->
+            <button id="modalCloseX"
+                    type="button"
+                    aria-label="Close modal"
+                    class="absolute top-3 right-3 flex h-8 w-8
+                           items-center justify-center rounded-full
+                           text-white hover:bg-white/15
+                           transition-colors">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <!-- Main Content -->
+        <div class="p-6 sm:p-8">
+
+            <p class="text-sm sm:text-base leading-7 text-slate-600">
+                Join researchers, healthcare professionals and
+                innovators at AIHC 2027. Early bird registration
+                is available during the following period.
+            </p>
+
+            <!-- Highlighted Dates -->
+            <div class="mt-6 rounded-lg border border-blue-100
+                        bg-blue-50 p-4 sm:p-5">
+
+                <div class="flex items-center gap-2 mb-4">
+                    <i class="fas fa-calendar-alt text-blue-700"></i>
+
+                    <span class="text-sm font-bold text-blue-900">
+                        Registration Dates
+                    </span>
                 </div>
-                <h2 id="modalTitle" class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-                    Submission Deadline Extended!
-                </h2>
-                <p class="text-blue-100 text-xs sm:text-sm mt-1">
-                    AIHC 2027 • International Conference on AI in Healthcare
+
+                <div class="grid grid-cols-2 gap-3">
+
+                    <!-- Start Date -->
+                    <div class="rounded-lg bg-white border
+                                border-slate-200 p-3 sm:p-4">
+                        <p class="text-xs font-medium
+                                  text-slate-500 mb-2">
+                            STARTS
+                        </p>
+
+                        <p class="text-lg sm:text-xl font-extrabold
+                                  text-slate-800 leading-tight">
+                            26 Oct
+                        </p>
+
+                        <p class="text-sm text-slate-500 mt-1">
+                            2026
+                        </p>
+                    </div>
+
+                    <!-- Closing Date -->
+                    <div class="rounded-lg bg-white border
+                                border-amber-300 p-3 sm:p-4">
+                        <p class="text-xs font-bold
+                                  text-amber-700 mb-2">
+                            LAST DATE
+                        </p>
+
+                        <p class="text-lg sm:text-xl font-extrabold
+                                  text-slate-800 leading-tight">
+                            30 Oct
+                        </p>
+
+                        <p class="text-sm text-slate-500 mt-1">
+                            2026
+                        </p>
+                    </div>
+
+                </div>
+
+                <p class="mt-4 text-xs leading-5 text-blue-900">
+                    <i class="fas fa-info-circle mr-1"></i>
+                    Register within the announced early bird period.
                 </p>
-                <!-- Close X button -->
-                <button id="modalCloseX" class="absolute top-4 right-4 text-white/80 hover:text-white bg-black/20 hover:bg-black/40 rounded-full w-9 h-9 flex items-center justify-center transition-all focus:outline-none" aria-label="Close modal">
-                    <i class="fas fa-times text-lg"></i>
+            </div>
+
+            <!-- Registration Button -->
+            <a href="https://aihc.sithyd.edu.in/api/v1/"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="mt-6 flex w-full items-center
+                      justify-center gap-2 rounded-lg
+                      bg-blue-700 px-5 py-3.5
+                      text-sm font-bold text-white
+                      hover:bg-blue-800 transition-colors
+                      focus:outline-none focus:ring-2
+                      focus:ring-blue-500 focus:ring-offset-2">
+
+                <i class="fas fa-user-plus"></i>
+                Register for AIHC 2027
+                <i class="fas fa-arrow-right ml-1 text-xs"></i>
+            </a>
+
+            <!-- Continue Button -->
+            <div class="mt-3 text-center">
+                <button id="modalContinueBtn"
+                        type="button"
+                        class="px-4 py-2 text-sm font-medium
+                               text-slate-500 hover:text-blue-700
+                               transition-colors">
+                    Continue to Website
                 </button>
             </div>
 
-            <!-- Modal Content -->
-            <div class="p-6 sm:p-8 space-y-6">
-                <!-- Highlight Message -->
-                <p class="text-gray-700 text-sm sm:text-base leading-relaxed text-center">
-                    Due to numerous requests from authors, researchers, and academicians, the organizing committee of <strong class="text-blue-800 font-bold">AIHC 2027</strong> has extended the paper submission and acceptance notification deadlines by one month!
+            <!-- Footer -->
+            <div class="mt-4 border-t border-slate-100 pt-4
+                        text-center">
+                <p class="text-xs text-slate-400">
+                    AIHC 2027
+                    <span class="mx-1">�</span>
+                    International Conference on AI in Healthcare
                 </p>
-
-                <!-- Dates Comparison Box -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <!-- Full Paper Submission -->
-                    <div class="bg-gradient-to-b from-red-50 to-white rounded-xl p-4 border border-red-200/70 shadow-sm text-center">
-                        <div class="flex items-center justify-center gap-2 text-red-600 font-semibold text-xs uppercase tracking-wider mb-2">
-                            <i class="fas fa-calendar-alt"></i> Full Paper Submission
-                        </div>
-                        <div class="space-y-1">
-                            <div class="text-xs text-gray-500 font-medium">
-                                Old Deadline: <span class="line-through text-red-500 font-bold">30 August 2026</span>
-                            </div>
-                            <div class="text-sm font-semibold text-emerald-800 pt-1">
-                                New Extended Deadline:
-                            </div>
-                            <div class="text-xl sm:text-2xl font-black text-emerald-600 bg-emerald-100/70 py-1.5 px-3 rounded-lg border border-emerald-300/80 shadow-inner">
-                                30 September 2026
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Acceptance Notification -->
-                    <div class="bg-gradient-to-b from-blue-50 to-white rounded-xl p-4 border border-blue-200/70 shadow-sm text-center">
-                        <div class="flex items-center justify-center gap-2 text-blue-700 font-semibold text-xs uppercase tracking-wider mb-2">
-                            <i class="fas fa-bell"></i> Acceptance Notification
-                        </div>
-                        <div class="space-y-1">
-                            <div class="text-sm font-semibold text-blue-900 pt-3 pb-1">
-                                Notification Date:
-                            </div>
-                            <div class="text-xl sm:text-2xl font-black text-blue-700 bg-blue-100/70 py-1.5 px-3 rounded-lg border border-blue-300/80 shadow-inner">
-                                25 October 2026
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CMT Submission note -->
-                <div class="bg-slate-50 border border-slate-200 rounded-lg p-3 text-xs text-gray-600 flex items-center justify-center gap-2 text-center">
-                    <i class="fas fa-info-circle text-blue-600 text-sm flex-shrink-0"></i>
-                    <span>All papers must be submitted via Microsoft CMT platform before the extended deadline.</span>
-                </div>
-
-                <!-- Modal Action Buttons -->
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
-                    <a href="https://cmt3.research.microsoft.com/AIHC2027" target="_blank" class="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold rounded-xl shadow-lg hover:shadow-blue-200 hover:-translate-y-0.5 transition-all text-center flex items-center justify-center gap-2">
-                        <i class="fas fa-paper-plane"></i>
-                        Submit Paper on CMT
-                    </a>
-                    <button id="modalContinueBtn" class="w-full sm:w-auto px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold rounded-xl transition-all text-center">
-                        Continue to Website
-                    </button>
-                </div>
             </div>
+
         </div>
     </div>
-
+</div>
+```
     <!-- Header -->
-    <nav class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md shadow-md z-50 border-b border-gray-200">
-    <div class="flex justify-between items-center h-20 px-6 py-4 max-w-7xl mx-auto">
-        
+<nav class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md
+            shadow-md z-50 border-b border-gray-200">
+
+    <div class="flex justify-between items-center h-20 px-4 sm:px-6
+                max-w-7xl mx-auto">
+
         <!-- Logo Section -->
-        <a href="index.html" class="flex items-center space-x-4">
-            <img src="assets/ieee.png" alt="IEEE Logo" class="h-10 w-auto">
-            <img src="assets/logo.svg" alt="AIHC 2027" class="h-14 w-auto">
+        <a href="index.html"
+           class="flex items-center gap-3 sm:gap-4 shrink-0">
+
+            <img src="assets/ieee.png"
+                 alt="IEEE Logo"
+                 class="h-8 sm:h-10 w-auto object-contain">
+
+            <img src="assets/logo.svg"
+                 alt="AIHC 2027"
+                 class="h-11 sm:h-14 w-auto object-contain">
         </a>
 
-        <!-- Desktop Menu -->
-        <div class="hidden md:flex items-center space-x-8">
-            <a class="text-gray-700 hover:text-blue-600 transition-colors font-medium" href="#home">Home</a>
-            <a href="#about" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">About</a>
-            <a href="#committees" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Committees</a>
-            <a href="Place.html?scroll=places" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Places</a>
+        <!-- Desktop Navigation -->
+        <div class="hidden lg:flex items-center gap-5 xl:gap-7">
 
-            <!-- Dropdown -->
+            <a href="index.html#home"
+               class="whitespace-nowrap text-gray-700 hover:text-blue-600
+                      transition-colors font-medium">
+                Home
+            </a>
+
+            <a href="index.html#about"
+               class="whitespace-nowrap text-gray-700 hover:text-blue-600
+                      transition-colors font-medium">
+                About
+            </a>
+
+            <a href="index.html#committees"
+               class="whitespace-nowrap text-gray-700 hover:text-blue-600
+                      transition-colors font-medium">
+                Committees
+            </a>
+
+            <!-- Registration -->
+            <a href="registration.html"
+               class="whitespace-nowrap text-blue-700 hover:text-blue-800
+                      transition-colors font-semibold">
+                Registration
+            </a>
+
+            <a href="Place.html?scroll=places"
+               class="whitespace-nowrap text-gray-700 hover:text-blue-600
+                      transition-colors font-medium">
+                Places
+            </a>
+
+            <!-- For Authors Dropdown -->
             <div class="relative group">
-                <button class="text-gray-700 hover:text-blue-600 transition-colors font-medium flex items-center">
+
+                <button type="button"
+                        class="flex items-center gap-1.5 whitespace-nowrap
+                               text-gray-700 hover:text-blue-600
+                               transition-colors font-medium py-3">
+
                     For Authors
-                    <svg class="ml-1 h-4 w-4 transform transition-transform duration-200 group-hover:rotate-180"
-                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M19 9l-7 7-7-7"></path>
+
+                    <svg class="h-4 w-4 transition-transform duration-200
+                                group-hover:rotate-180"
+                         fill="none"
+                         stroke="currentColor"
+                         viewBox="0 0 24 24"
+                         aria-hidden="true">
+                        <path stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M19 9l-7 7-7-7">
+                        </path>
                     </svg>
                 </button>
 
-                <div class="absolute left-0 top-full mt-2 bg-white shadow-lg rounded-md py-2 w-52 border border-gray-100 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity">
-                    <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"
-                        href="Call_for_paper.html">Call for Papers</a>
-                    <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"
-                        href="Instruction_for_authors.html">Instructions for Authors</a>
-                    <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"
-                        href="Submission_Guidelines.html">Submission Guidelines</a>
+                <!-- Dropdown Menu -->
+                <div class="absolute left-0 top-full pt-1 w-56
+                            opacity-0 invisible translate-y-1
+                            group-hover:opacity-100 group-hover:visible
+                            group-hover:translate-y-0
+                            group-focus-within:opacity-100
+                            group-focus-within:visible
+                            group-focus-within:translate-y-0
+                            transition-all duration-200">
+
+                    <div class="bg-white shadow-xl rounded-xl py-2
+                                border border-gray-100 overflow-hidden">
+
+                        <a href="Call_for_paper.html"
+                           class="flex items-center gap-3 px-4 py-3
+                                  text-sm text-gray-700 hover:bg-blue-50
+                                  hover:text-blue-700 transition-colors">
+                            <i class="fas fa-file-alt w-4 text-blue-600"></i>
+                            Call for Papers
+                        </a>
+
+                        <a href="Instruction_for_authors.html"
+                           class="flex items-center gap-3 px-4 py-3
+                                  text-sm text-gray-700 hover:bg-blue-50
+                                  hover:text-blue-700 transition-colors">
+                            <i class="fas fa-book-open w-4 text-blue-600"></i>
+                            Instructions for Authors
+                        </a>
+
+                        <a href="Submission_Guidelines.html"
+                           class="flex items-center gap-3 px-4 py-3
+                                  text-sm text-gray-700 hover:bg-blue-50
+                                  hover:text-blue-700 transition-colors">
+                            <i class="fas fa-list-check w-4 text-blue-600"></i>
+                            Submission Guidelines
+                        </a>
+
+                    </div>
                 </div>
             </div>
 
+            <!-- Submit Paper -->
             <a href="https://cmt3.research.microsoft.com/AIHC2027"
-                class="bg-blue-600 text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-md">
+               target="_blank"
+               rel="noopener noreferrer"
+               class="inline-flex items-center justify-center gap-2
+                      whitespace-nowrap bg-blue-600 text-white
+                      px-4 xl:px-5 py-2.5 rounded-lg font-semibold
+                      hover:bg-blue-700 transition-all duration-300
+                      shadow-md hover:shadow-lg">
+
+                <i class="fas fa-upload text-sm"></i>
                 Submit Paper
             </a>
+
         </div>
 
-        <!-- Mobile Menu Button -->
+        <!-- Mobile / Tablet Menu Button -->
         <button id="mobile-menu-button"
-            class="text-gray-800 text-2xl md:hidden"
-            aria-label="Toggle menu">
-            <i class="fas fa-bars"></i>
+                type="button"
+                class="text-gray-800 text-2xl lg:hidden
+                       w-11 h-11 flex items-center justify-center
+                       rounded-lg hover:bg-gray-100 transition-colors"
+                aria-label="Toggle navigation menu"
+                aria-controls="mobile-menu"
+                aria-expanded="false">
+
+            <i class="fas fa-bars" aria-hidden="true"></i>
         </button>
 
     </div>
 
-    <!-- Mobile Menu -->
+    <!-- Mobile / Tablet Navigation -->
     <div id="mobile-menu"
-        class="hidden md:hidden bg-white border-t border-gray-200 py-4 px-6 shadow-lg">
-        <a href="#home" class="block py-2 text-gray-700 hover:text-blue-600">Home</a>
-        <a href="#about" class="block py-2 text-gray-700 hover:text-blue-600">About</a>
-        <a href="#committees" class="block py-2 text-gray-700 hover:text-blue-600">Committees</a>
-        <a href="Place.html?scroll=places" class="block py-2 text-gray-700 hover:text-blue-600">Places</a>
-        <a href="Call_for_paper.html" class="block py-2 text-gray-700 hover:text-blue-600">Call for Papers</a>
-        <a href="Instruction_for_authors.html" class="block py-2 text-gray-700 hover:text-blue-600">Instructions for Authors</a>
-        <a href="Submission_Guidelines.html" class="block py-2 text-gray-700 hover:text-blue-600">Submission Guidelines</a>
+         class="hidden lg:hidden bg-white border-t border-gray-200
+                shadow-lg max-h-[calc(100vh-5rem)] overflow-y-auto">
 
-        <a href="https://cmt3.research.microsoft.com/AIHC2027"
-            class="mt-4 block bg-blue-600 text-white px-6 py-2 rounded-lg text-center font-semibold hover:bg-blue-700 transition-all">
-            Submit Paper
-        </a>
+        <div class="max-w-7xl mx-auto px-5 py-4 space-y-1">
+
+            <a href="index.html#home"
+               class="flex items-center gap-3 rounded-lg px-4 py-3
+                      text-gray-700 hover:text-blue-700 hover:bg-blue-50
+                      transition-colors">
+                <i class="fas fa-house w-5 text-center text-gray-400"></i>
+                Home
+            </a>
+
+            <a href="index.html#about"
+               class="flex items-center gap-3 rounded-lg px-4 py-3
+                      text-gray-700 hover:text-blue-700 hover:bg-blue-50
+                      transition-colors">
+                <i class="fas fa-circle-info w-5 text-center text-gray-400"></i>
+                About
+            </a>
+
+            <a href="index.html#committees"
+               class="flex items-center gap-3 rounded-lg px-4 py-3
+                      text-gray-700 hover:text-blue-700 hover:bg-blue-50
+                      transition-colors">
+                <i class="fas fa-users w-5 text-center text-gray-400"></i>
+                Committees
+            </a>
+
+            <!-- Registration in Mobile Menu -->
+            <a href="registration.html"
+               class="flex items-center gap-3 rounded-lg px-4 py-3
+                      bg-blue-50 text-blue-700 font-semibold
+                      hover:bg-blue-100 transition-colors">
+                <i class="fas fa-ticket-alt w-5 text-center"></i>
+                Registration
+                <i class="fas fa-arrow-right ml-auto text-sm"></i>
+            </a>
+
+            <a href="Place.html?scroll=places"
+               class="flex items-center gap-3 rounded-lg px-4 py-3
+                      text-gray-700 hover:text-blue-700 hover:bg-blue-50
+                      transition-colors">
+                <i class="fas fa-location-dot w-5 text-center text-gray-400"></i>
+                Places
+            </a>
+
+            <!-- Mobile Author Links -->
+            <div class="pt-2 mt-2 border-t border-gray-100">
+
+                <p class="px-4 py-2 text-xs font-bold uppercase
+                          tracking-wider text-gray-400">
+                    For Authors
+                </p>
+
+                <a href="Call_for_paper.html"
+                   class="flex items-center gap-3 rounded-lg px-4 py-3
+                          text-gray-700 hover:text-blue-700 hover:bg-blue-50
+                          transition-colors">
+                    <i class="fas fa-file-alt w-5 text-center text-gray-400"></i>
+                    Call for Papers
+                </a>
+
+                <a href="Instruction_for_authors.html"
+                   class="flex items-center gap-3 rounded-lg px-4 py-3
+                          text-gray-700 hover:text-blue-700 hover:bg-blue-50
+                          transition-colors">
+                    <i class="fas fa-book-open w-5 text-center text-gray-400"></i>
+                    Instructions for Authors
+                </a>
+
+                <a href="Submission_Guidelines.html"
+                   class="flex items-center gap-3 rounded-lg px-4 py-3
+                          text-gray-700 hover:text-blue-700 hover:bg-blue-50
+                          transition-colors">
+                    <i class="fas fa-list-check w-5 text-center text-gray-400"></i>
+                    Submission Guidelines
+                </a>
+
+            </div>
+
+            <!-- Mobile Submit Paper Button -->
+            <div class="pt-4 mt-3 border-t border-gray-100">
+
+                <a href="https://cmt3.research.microsoft.com/AIHC2027"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="flex items-center justify-center gap-2 w-full
+                          bg-blue-600 text-white px-6 py-3.5 rounded-xl
+                          font-semibold hover:bg-blue-700 transition-all
+                          shadow-md">
+
+                    <i class="fas fa-upload"></i>
+                    Submit Paper
+                </a>
+
+            </div>
+
+        </div>
     </div>
+
 </nav>
+
 
  
     <!-- Hero Section -->
@@ -841,8 +1109,8 @@
         <div class="bg-white rounded-xl shadow-lg p-8 mb-10 max-w-6xl mx-auto">
             <h3 class="text-3xl font-bold text-blue-800 mb-6 pb-3 border-b-2 border-blue-200 text-center">Core Committee</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-gray-50 p-5 rounded-xl border border-gray-200 transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2 hover:border-blue-300"><p class="font-bold text-lg text-blue-800">Chief Patron,</p><p class="text-gray-700">Dr. S. B. Mujumdar</p><p class="text-gray-700">Chancellor, Symbiosis International (Deemed University), Pune, India | Founder and President, Symbiosis </p></div>
-               <div class="bg-gray-50 p-5 rounded-xl border border-gray-200 transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2 hover:border-blue-300"><p class="font-bold text-lg text-blue-800">Patrons</p><p class="text-gray-700">Dr.Vidya Yeravdekar, Pro-Chancellor, Symbiosis International (Deemed University), Pune, India | Principal Director, Symbiosis</p><br> <p class="text-gray-700"> Dr. Ramakrishnan Raman, Vice Chancellor, Symbiosis International (Deemed University), Pune, India</p><br><p class="text-gray-700">Dr. Rajiv Yeravdekar Provost, Faculty of Medical and Health Sciences, Symbiosis International (Deemed University)</p></div>
+                <div class="bg-gray-50 p-5 rounded-xl border border-gray-200 transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2 hover:border-blue-300"><p class="font-bold text-lg text-blue-800">Chief Patron,</p><p class="text-gray-700">Dr. S. B. Mujumdar</p><p class="text-gray-700">Founder and President, Symbiosis International (Deemed University) </p></div>
+               <div class="bg-gray-50 p-5 rounded-xl border border-gray-200 transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2 hover:border-blue-300"><p class="font-bold text-lg text-blue-800">Patrons</p><p class="text-gray-700">Dr.Vidya Yeravdekar, Chancellor, Symbiosis International (Deemed University), Pune, India | Principal Director, Symbiosis</p><br> <p class="text-gray-700"> Dr. Ramakrishnan Raman, Vice Chancellor, Symbiosis International (Deemed University), Pune, India</p><br><p class="text-gray-700">Dr. Rajiv Yeravdekar Provost, Faculty of Medical and Health Sciences, Symbiosis International (Deemed University)</p></div>
                <div class="bg-gray-50 p-5 rounded-xl border border-gray-200 transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2 hover:border-blue-300"><p class="font-bold text-lg text-blue-800">General Chairs</p><p class="text-gray-700">Dr. Rajanikanth Aluvalu</p><p class="text-gray-700"> Director, Symbiosis International (Deemed University), Hyderabad, India</p> <br><p class="text-gray-700">Dr. V. K. Sashindran, Dean, Symbiosis Medical College for Women and Symbiosis University Hospital and Research Centre, Pune, India.</p></div>
                 <div class="bg-gray-50 p-5 rounded-xl border border-gray-200 transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2 hover:border-blue-300"><p class="font-bold text-lg text-blue-800">Co-Chairs</p><p class="text-gray-700">Dr. Somula Ramasubbareddy</p><p class="text-gray-700">Associate Professor, Symbiosis International (Deemed University), Hyderabad, India</p> <br><p class="text-gray-700"> Dr. K Suresh Babu, Associate Professor in Biochemistry at Symbiosis Medical College for Women, Pune.</p></div>
             </div>
@@ -878,6 +1146,7 @@
                 <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Dr. Satyanarayana Bheesette, India</div>
                 <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Bala Prasad Peddigari, Chief Innovation Officer and Global Head, India</div>
                 <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Dr Bhushan Boratikar,India</div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Dr Chandrashekhar H Patil,India</div>
             </div>
         </div>
 
@@ -1118,23 +1387,23 @@
                     <thead class="bg-blue-700 text-white">
                         <tr>
                             <th class="py-3 px-4 text-left">Category</th>
-                            <th class="py-3 px-4 text-center">Early Bird (IEEE / General)</th>
-                            <th class="py-3 px-4 text-center">Regular (IEEE / General)</th>
-                            <th class="py-3 px-4 text-center">Spot (IEEE / General)</th>
+                            <th class="py-3 px-4 text-center">Early Bird </th>
+                            <th class="py-3 px-4 text-center">Regular </th>
+                            <th class="py-3 px-4 text-center">Spot</th>
                         </tr>
                     </thead>
                     <tbody class="text-gray-800">
                         <tr class="bg-blue-50 font-semibold"><td class="py-2 px-4" colspan="4">Indian Authors</td></tr>
-                        <tr><td class="py-2 px-4 pl-8">Academia / R&D / Industry</td><td class="py-2 px-4 text-center">₹9000 / 10000</td><td class="py-2 px-4 text-center">₹10000 / 11000</td><td class="py-2 px-4 text-center">₹11000 / 12000</td></tr>
-                        <tr class="bg-gray-100"><td class="py-2 px-4 pl-8">IEEE Members</td><td class="py-2 px-4 text-center">₹8000 / 9000</td><td class="py-2 px-4 text-center">₹9000 / 10000</td><td class="py-2 px-4 text-center">₹10000 / 11000</td></tr>
-                        <tr><td class="py-2 px-4 pl-8">Students</td><td class="py-2 px-4 text-center">₹6000 / 7000</td><td class="py-2 px-4 text-center">₹7000 / 8000</td><td class="py-2 px-4 text-center">₹8000 / 9000</td></tr>
-                        <tr class="bg-gray-100"><td class="py-2 px-4 pl-8">IEEE Student Members</td><td class="py-2 px-4 text-center">₹5000 / 6000</td><td class="py-2 px-4 text-center">₹6000 / 7000</td><td class="py-2 px-4 text-center">₹7000 / 8000</td></tr>
+                        <tr><td class="py-2 px-4 pl-8">Academia / R&D / Industry</td><td class="py-2 px-4 text-center">₹9000 </td><td class="py-2 px-4 text-center">₹10000 </td><td class="py-2 px-4 text-center">₹11000 </td></tr>
+                        <tr class="bg-gray-100"><td class="py-2 px-4 pl-8">IEEE Members</td><td class="py-2 px-4 text-center">₹8000</td><td class="py-2 px-4 text-center">₹9000 </td><td class="py-2 px-4 text-center">₹10000 </td></tr>
+                        <tr><td class="py-2 px-4 pl-8">Students</td><td class="py-2 px-4 text-center">₹6000</td><td class="py-2 px-4 text-center">₹7000</td><td class="py-2 px-4 text-center">₹8000</td></tr>
+                        <tr class="bg-gray-100"><td class="py-2 px-4 pl-8">IEEE Student Members</td><td class="py-2 px-4 text-center">₹5000</td><td class="py-2 px-4 text-center">₹6000</td><td class="py-2 px-4 text-center">₹7000</td></tr>
                         
                         <tr class="bg-green-50 font-semibold"><td class="py-2 px-4" colspan="4">Foreign Authors</td></tr>
-                         <tr ><td class="py-2 px-4 pl-8">Academia / R&D / Industry</td><td class="py-2 px-4 text-center">$200 / $250</td><td class="py-2 px-4 text-center">$225 / $275</td><td class="py-2 px-4 text-center">$250 / $300</td></tr>
-                        <tr class="bg-gray-100"><td class="py-2 px-4 pl-8">IEEE Members</td><td class="py-2 px-4 text-center">$175 / $200</td><td class="py-2 px-4 text-center">$200 / $225</td><td class="py-2 px-4 text-center">$225 / $250</td></tr>
-                        <tr ><td class="py-2 px-4 pl-8">Students</td><td class="py-2 px-4 text-center">$125 / $150</td><td class="py-2 px-4 text-center">$150 / $175</td><td class="py-2 px-4 text-center"> $225 / $250</td></tr>
-                        <tr class="bg-gray-100"><td class="py-2 px-4 pl-8">IEEE Student Members</td><td class="py-2 px-4 text-center">$100 / $125</td><td class="py-2 px-4 text-center">$125 / $150</td><td class="py-2 px-4 text-center">$150 / $175</td></tr>
+                         <tr ><td class="py-2 px-4 pl-8">Academia / R&D / Industry</td><td class="py-2 px-4 text-center">$200</td><td class="py-2 px-4 text-center">$225</td><td class="py-2 px-4 text-center">$250</td></tr>
+                        <tr class="bg-gray-100"><td class="py-2 px-4 pl-8">IEEE Members</td><td class="py-2 px-4 text-center">$175</td><td class="py-2 px-4 text-center">$200</td><td class="py-2 px-4 text-center">$225</td></tr>
+                        <tr ><td class="py-2 px-4 pl-8">Students</td><td class="py-2 px-4 text-center">$125</td><td class="py-2 px-4 text-center">$150</td><td class="py-2 px-4 text-center"> $225</td></tr>
+                        <tr class="bg-gray-100"><td class="py-2 px-4 pl-8">IEEE Student Members</td><td class="py-2 px-4 text-center">$100</td><td class="py-2 px-4 text-center">$125</td><td class="py-2 px-4 text-center">$150</td></tr>
                         <tr class="bg-red-50 font-semibold"><td class="py-2 px-4" colspan="4">Listener / Attendees</td></tr>
                          <tr><td class="py-2 px-4 pl-8">without paper</td><td class="py-2 px-4 text-center">₹3500 / 4000</td><td class="py-2 px-4 text-center">₹4000 / 4500</td><td class="py-2 px-4 text-center">₹4500 / 5000</td></tr>
                     </tbody>
@@ -1146,7 +1415,7 @@
 
      <!-- Organizing Partners -->
     <section class="py-20 px-8 md:px-20 bg-white text-center">
-         <p class="text-gray-600 text-lg mb-8"> <a href="#" class="text-blue-600 font-semibold hover:underline">here</a></p>
+         <p class="text-gray-600 text-lg mb-8"> <a href="#" class="text-blue-600 font-semibold hover:underline"></a></a></p>
         <h2 class="text-5xl font-semibold text-gray-800 mb-12">Organizing Partners</h2>
         <div class="flex flex-wrap justify-center items-center gap-16">
             <div class="flex flex-col items-center"><img src="assets/images.png" alt="Symbiosis Institue of Technology Hyderabad" class="h-20 object-contain hover:scale-105 transition"><p class="font-semibold text-lg text-gray-700 mt-4">Symbiosis Institue of Technology Hyderabad, India</p></div>
